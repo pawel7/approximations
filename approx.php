@@ -2,142 +2,264 @@
 <html lang="pl">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<?php
-$lang = isset( $_GET['lang'] ) && $_GET['lang'] == 'pl' ? 'pl' : 'en';
-$title =    $lang == 'pl' ? 'Przybliżenia liczb' : 'Approximations of numbers';
-$hdr_text = $lang == 'pl' ? 'Przybliżenia liczb algebraicznych i przestępnych' : 'Approximations of algebraic and transcendental numbers';
-$p_text = $lang == 'pl' ? 'Kolejne, oraz to lepsze przybliżenia liczb za pomocą ułamków o mianownikach będących kolejnymi liczbami naturalnymi.' : 
-'Consecutive, better and better approximations of numbers with fractions with denominators which are successive natural numbers.';
-$a_text = $lang == 'pl' ? 'English version' : 'Po polsku';
-$a_href = $lang == 'pl' ? '?lang=en' : '?lang=pl';
-?>
-<title><?= $title ?></title>
+<title>Approximations of numbers</title>
   <style media="screen" type="text/css">
-	body { background-color:#a0c0b0; }
-	p, h1 { text-align: center; }
-	pre { margin: 0 auto; width:1040px; }
+	body { background-color:#a0c0b0; margin: 0 auto; width:1260px;  text-align: center;}
 	.nagl { background-color: #E0D8D0; color:#012;}
 	.odd  { background-color: #C0f0D0;}
 	.even { background-color: #C0D0f0;}
+	.lepsze { font-weight:bold; color: #063;}
+	.best  { font-weight:bold; background-color: white; }
+	/*.in_fraction{ border: 1px solid blue; } */
+	/*.almostbest  { font-weight:bold; background-color: #e0f0f0;  }*/
+	span{display:inline-block;}
 	.odd:hover, .even:hover  { background-color: #A0E0C0;}
+	a { margin: 8px; }
+	label { text-align: right; display: inline-block; width: 250px; }
   </style>
 </head>
 <body>
-<h1><?= $hdr_text ?></h1>
-<p><?= $p_text ?></p>
-<a href="<?= $a_href ?>"><?= $a_text ?></a>
-<pre>
 <?php
-$alfa  = 137.03599907444; 
-$alfa1 = 137.03599903791; 
-$alfa2 = 137.03599908451;
-$alfa3 = 137.03599911;
-$random_number = 2.3962610645827138793264;
-$random_number2 = 7.1963874952918563207152;
-
-$pi_str='3.141592653589793238462643383279502884197169';
-$pi = 3.141592653589793238462643383279502884197169;
-$e=2.71828182845904523536028747135266249775724709369995;
-$e_str='2.71828182845904523536028747135266249775724709369995';
-$fi = (sqrt( 5.0 ) + 1)/2;
-
-$r3_5 = pow( 5.0, 1.0/3 );
-$r4_5 = pow( 5.0, 1.0/4 );
-
-$r2_2 = sqrt( 2.0 );
-$r3_2 = pow( 2.0, 1.0/3 );
-$r4_2 = pow( 2.0, 0.25 );
-$r5_2 = pow( 2.0, 0.2 );
-
-$Z0=376.730313461; //characteristic impedance of vacuum
-$g = 5.585694713; // proton g factor
-
-$max = 1000*100;
-$milion = 1000*1000;
-
-//Approximations( $r3_5, $max, '5<sup>1/3</sup>' );
-//Approximations( $r4_5, $max, '5<sup>1/4</sup>' );
-
-$name = $lang == 'pl' ? 'Złoty podział' :  'Golden ratio';
-$name .= ', &phi; = ( 1 + &radic;<span style="text-decoration:overline;">5</span> ) / 2';
-Approximations( $fi, $max, $name);
-
-Approximations( $r2_2, $max, '2<sup>1/2</sup>' );
-Approximations( $r3_2, $max, '2<sup>1/3</sup>' );
-//Approximations( $r4_2, $max, '2<sup>1/4</sup>' );
-//Approximations( $r5_2, $max, '2<sup>1/5</sup>' );
-                                        
-Approximations( $pi, $milion, '&pi;', $pi_str );
-Approximations( $e, $milion, 'e', $e_str );
-
-Approximations( $alfa,  $max, 'alpha' );
-Approximations( $alfa1, $max, 'alpha1' );
-//Approximations( $alfa2, $max, 'alpha2' );
-//Approximations( $alfa3, $max, 'alpha3' );
-Approximations( $Z0, $max, 'characteristic impedance of vacuum (Z0)' );
-Approximations( $g, $max, 'proton g factor' );
-
-Approximations( $random_number, $max, 'A random number' );
-Approximations( $random_number2, $max, 'Another random number' );
-
-function Approximations( $liczba, $max, $nazwa, $dokladniej='' )
-{
-	$lang = isset( $_GET['lang'] ) && $_GET['lang'] == 'pl' ? 'pl' : 'en';
-	$str = $lang == 'pl' ? ', dokładniej = ' : ', more precise = ';
-	$dokl = ( $dokladniej != '' ) ? $str.$dokladniej : '';
-	printf( "\n<b>%22s = %16.12f%s</b>\n", $nazwa, $liczba, $dokl );
-	$dif = 1; 
-	$cnt = 0;
-	$liczniki = array();
-	$mianowniki = array();
-	for( $m = 2; $m <= $max; $m++ )
-	{
-		$l = round( $liczba * $m );
-		$iloraz = 1.0 * $l / $m;
-		$delta = $liczba - $iloraz; 
+if ( empty( $_GET ) || isset( $_GET['any'] ))
+	{ 
+		// wypisz formularz do pobrania liczby
+	?>
 		
-		if ( abs( $delta ) < $dif )
-		{	 
-			$liczniki[] = $l;
-			$mianowniki[] = $m;
-			$cnt++;
-			$class = ( $cnt % 2 == 1 ) ? 'odd' : 'even';
-			if ( $cnt % 50 == 1 )
-			{	                      // Lp liczn  mian iloraz  różn róż*m r*m2  r*m3  r*m4
+  <h2><?=  $_GET['lang']=='pl' ? 'Przybliżenia liczb':'Approximations of numbers'?></h2>
+  <form>
+    <label><?=  $_GET['lang']=='pl' ? 'Podaj liczbę':'Number to be approximated'?></label> 
+		<input type="text" name="number" id="number" value=""><br>
+    <label><?=  $_GET['lang']=='pl' ? 'Podaj jej nazwę':'Its name'?></label> 
+		<input type="text" name="name" id="name" value=""><br>
+    <label> </label> 
+		<input type="submit"  value="OK" autofocus/><br>
+		<input type="hidden" name="lang" id="lang" value="<?= $_GET['lang']; ?>">
+  </form>
+<?php } 
+else
+{
+	require_once "set_values.php";
+	//require_once "lib_fraction.php";
+ 
+ 	require_once "lancuchowy.php";
+//Test_Continuous_Fractions(); die();	
+	Set_Numbers();
+	Set_Parameters();
+
+	Show_Menu();
+	echo "<pre>\n";
+
+	if( isset( $_GET['rootlist'] ))
+	{
+		$number_list = $_GET['rootlist'] == '' ? $root_number_list : $_GET['rootlist'];
+		Root_List_Approximations( $number_list );
+	}
+	else	
+	if( isset( $_GET['root3list'] ))
+	{
+		$number_list = $_GET['root3list'] == '' ? $root_number_list : $_GET['root3list'];
+		Cube_Root_List_Approximations( $number_list );
+	}
+	else	
+	if( isset( $_GET['range'] ))
+	{
+		Test_Root_Range_Approximations();
+	}
+	else	
+	if( $number != '' ) 
+	{
+		Approximations( $number, $limit, $full_name, '', $istotnie);
+	}
+	else
+	{
+		// Pokaż aproksymacje wybranych liczb
+		Show_Approximations();
+	}
+}
+
+function Display_Approximation_Line( $lang, $is_much_better, $cnt, $l, $m, $dif_m, $iloraz, $delta, $ile_times_better )
+{
+	global $pierwiastkowana, $root_n, $denominators, $coefs, $coef_ind;
+	define( 'REPEAT_HEADER_LINES', 50 );
+	$class = ( $cnt % 2 == 1 ) ? 'odd' : 'even';
+	$better = $is_much_better;// || $delta == 0.0;
+	$class .= $better ? ' lepsze' : '';
+	$lepsze = $better ? '    &#10004;' : '     ';
+	
+		// mianownik jest mianownikiem $coef_ind reduktu ulamka lancuchowego
+	$jest_z_cf = $m == intval($denominators[ $coef_ind ]);
+	
+	$lepsze .= $jest_z_cf ? ' '.sprintf( "%4d", $coefs[$coef_ind]).' &#10004;    ' : '           ';
+	if( $jest_z_cf ) $coef_ind++;
+	
+	$potegi2 = $delta * $m * $m;
+	$potegi3 = $potegi2 * $m;
+	
+	switch ( $root_n ) {
+		case 2: $diff = $l * $l - $pierwiastkowana * $m * $m;
+				$class .= $pierwiastkowana > 6 && in_array( $diff, array( 1, -1 )) ? ' best' : '';
+				$class .= $pierwiastkowana > 10 && in_array( $diff, array( 2, -2 )) ? ' almostbest' : '';
+				$hdr = "      l&sup2;-A*m&sup2;";
+				$hdr_format = '%15s';
+				$dif_format = '%12d ';
+				break;
+		case 3: $diff = $l * $l * $l - $pierwiastkowana * $m * $m * $m;
+				$hdr = "      l&sup3;-A*m&sup3;";
+				$hdr_format = '%15s';
+				$dif_format = '%12d ';
+				break;
+		default:$diff= ''; 
+				$hdr = '';
+				$hdr_format = '%0s';
+				$dif_format = '%0s';
+				break;
+	}
+	
+	if( $jest_z_cf ) $class .= ' in_fraction';
+	
+	//$diff2= $l * $l - $pierwiastkowana * $m * $m;
+	//$diff3 = $l * $l * $l - $pierwiastkowana * $m * $m * $m;
+					
+		if ( $cnt % REPEAT_HEADER_LINES == 1 )
+			{
+					//   cnt  l     m   Dm  ilor  różn  wyrażenie    *lep  r*m2 r*m3 lepsze
+				$format ='%3s %9s / %9s%10s %16s %14s  '.$hdr_format.'%12s %16s %17s %13s ';
+				
 				if( $lang == 'pl' )
 				{
-					printf( "<span class=\"nagl\">%3s %9s / %8s = %14s  %12s  %12s  %21s  %17s %26s</span>\n",  
-						'Lp', 'licznik', 'mianow m', 'iloraz',   '   różnica D', 'D * m', 'D * m&sup2;', 'D * m&sup3;', 'D * m&#8308;' );
+					printf( "<span class=\"nagl\">$format</span>\n",  
+						'Lp', '  licznik', 'mianow m', ' różnica m', 'iloraz   ', '    różnica D ', $hdr, '* lepiej', 'D * m&sup2;', 'D * m&sup3;', 'Lepsze Łańcuch' );
 				}
 				else
 				{
-					printf( "<span class=\"nagl\">%3s %9s / %8s = %14s  %12s  %12s  %21s  %17s %26s</span>\n",  
-						'#', 'numerator', 'denom m', 'quotient', 'difference D', 'D * m', 'D * m&sup2;', 'D * m&sup3;', 'D * m&#8308;' );
+					printf( "<span class=\"nagl\">$format</span>\n",  
+						'#', 'numerator', 'denom m', '  differ m', 'quotient ', '  difference D', $hdr, '* better', 'D * m&sup2;', 'D * m&sup3;',   'Better Cont fr' );
 				}
 			}
-			printf( "<span class=\"%s\">%3d %9d / %8d = %14.10f %+14.12f", $class, $cnt, $l, $m, $iloraz, $delta );
-			
-			$potegi[0] = $delta;
-			
-			for ( $wykl = 1; $wykl <= 4; $wykl++ )
-			{
-				$potegi[ $wykl ] = $potegi[ $wykl - 1 ] * $m;
-			}
+					$ile = $delta == 0.0 ? ($lang =='pl' ? '  Dokładnie' :' Precisely') : $ile_times_better;
+					$format = $delta == 0.0 ?
+					        "<span class=\"%s\">%3d %9d / %9d%10d %16.12f  %+14.12f $dif_format%+11s %+10.3f %+12.3f %15s</span>\n" :
+					        "<span class=\"%s\">%3d %9d / %9d%10d %16.12f  %+14.12f $dif_format%+11.4f %+10.3f %+12.3f %15s</span>\n";
+					//                   class  cnt  l     m  Dm iloraz   delta    * lepiej  pot2     pot3  lepsze				
+				//	printf( "<span class=\"%s\">%3d %9d / %9d%10d %16.12f  %+14.12f %+11.4f %+10.3f %+12.3f %10s</span>\n",
+					printf( $format,
+						$class, $cnt, $l, $m, $dif_m, $iloraz, $delta, $diff, $ile, $potegi2, $potegi3, $lepsze );
+}
 
-			//if ( $nazwa == 'Złoty podział (fi)' ) $potegi[2] *= sqrt(5.0);
+function Approximations( $liczba, $lim=0, $name='', $dokladniej='', $istotnie=2 )
+{
+	global $limit, $root_n, $denominators, $coefs, $coef_ind;
+	if( $lim == 0 ) $lim = $limit;
+	$nazwa = $name == '' ? "$liczba" : $name;
+	$lang = isset( $_GET['lang'] ) && $_GET['lang'] == 'en' ? 'en' : 'pl';
+	$str = $lang == 'pl' ? ', dokładniej = ' : ', more precise = ';
+	$dokl = ( $dokladniej != '' ) ? $str.$dokladniej : '';
+	$html = $lang == 'pl' ? "Przybliżenia liczby $nazwa" :
+							"Approximations of $nazwa";
+	if( $root_n == 0 ) $html .= " = $liczba$dokl";
+	echo "<h3>$html</h3>";
+	
+	
+	$cont_frac = to_cont( $liczba, 0 );
+		
+	//var_dump( $cont_frac ); 
+	//$numerators = $cont_frac['numerators'];
+	$denominators = $cont_frac['denominators'];
+	if( count($denominators) == 1 ) 
+	{
+		echo $lang == 'pl' ? "Liczba całkowita !\n" : "Whole number\n";
+		return;
+	}
+	$coefs = $cont_frac['coefs'];
+	$coef_ind = 1;// pomijamy zerowy indeks, numerators[0] = roumd( $liczba ), denominators[0] = 1;
+	
+		// pobierz pierwszy coef_ind taki, ze $denominators[$coef_ind] >= 2, bo główna petla jest od 2
+	while( $coef_ind <= count($denominators) && $denominators[$coef_ind] < 2 ) $coef_ind++;
+
+	
+	//printf( "\n<b>%22s = %19.15f%s</b>\n", $nazwa, $liczba, $dokl );
+	$last_delta = $liczba - round($liczba);	// poprzednia różnica między liczbą, a jej przybliżeniem
+	$dif = 1; 	// Różnica między liczbą, a jej, do tej pory, najlepszym przybliżeniem
+	
+	$cnt = 0;
+	$cnt_lepsze = 0;
+	$liczniki = array();
+	$mianowniki = array();
+	$liczniki_lepsze = array();
+	$mianowniki_lepsze = array();
+	$times_better = array();
+	
+	//$liczniki[] = round( $liczba );
+	//$mianowniki[] = 1;
+	//$z0_test_mian = array(41,152, 2362, 9029,14261,108945,430548);
+	$last_m = 1;	// poprzedni mianownik
+	
+		// główna petla
+	for( $m = 2; $m <= $lim; $m++ )
+	{
+		$l = round( $liczba * $m );
+		$iloraz = 1.0 * $l / $m;
+		$delta = $liczba - $iloraz; // Różnica między liczbą, a jej przybliżeniem
+		//if( $delta == 0.0 ) die('zero');
+		
+			// znaleziono lepsze przybliżenie
+		$approx_is_better = abs( $delta ) < $dif;
+		
+			// bardzo podobnych NIE bierzemy
+		//$approx_is_better = ( abs( $delta ) < $dif * 1.02 ); //|| in_array( $m, $z0_test_mian );
 			
-			printf( "%+17.8f  %+10.3f  %+12.3f  %+19.3f </span>\n", $potegi[1], $potegi[2], $potegi[3], $potegi[4] );
+		if ( $approx_is_better )
+		{	 
+			$liczniki[] = $l;
+			$mianowniki[] = $m;
 			
+			$mian_rozn = $m - $last_m;
+			//$mian_rozn = $l*$l*$l*$l-2*$m*$m*$m*$m;
+			
+			$last_m = $m;
+			$cnt++;
+			
+				// ile razy to przybliżenie jest lepsze od poprzedniego
+			$ile_times_better = $delta == 0.0  ? 'dokladnie' : $last_delta / $delta;
+			$last_delta = $delta;
 			$dif = abs( $delta );
+	
+			$is_much_better = $delta == 0.0 || abs( $ile_times_better ) >= $istotnie;
+			if( $is_much_better )	
+			{
+				$liczniki_lepsze[] = $l;
+				$mianowniki_lepsze[] = $m;
+				$times_better[] = $ile_times_better;
+				$cnt_lepsze++;
+			}
+			Display_Approximation_Line( $lang, $is_much_better, $cnt, $l, $m, $mian_rozn, $iloraz, $delta, $ile_times_better );
 		}
 	}
-	/*echo '</pre>';
-	foreach( $liczniki as $i => $licznik )
-	{
-		echo "<b>{$i}.</b> $licznik / {$mianowniki[$i]} ";
-	}
-	echo '<pre>';*/
 	
+	$html = $lang == 'pl' ? "przybliżeń co najmniej $istotnie razy lepszych." : "approximations at least $istotnie times better.";
+	echo "<p>( $cnt_lepsze / $cnt ) $html</p>";
+	
+	$ile_razy = 1.5;
+		// nie wyswietlamy osobnej tabeli przybliżeń istotnie lepszych, bo prawie wszystkie są istotnie lepsze
+	if( $cnt_lepsze * $ile_razy > $cnt ) return;
+		// dla listy też nie wyświetlamy
+	if( isset( $_GET['rootlist'] )  || isset( $_GET['root3list'] )) return;
+	
+	$html = $lang == 'pl' ? "Co najmniej $istotnie razy lepsze, przybliżenia liczby $nazwa = $liczba" :
+							"Approximations of $nazwa = $liczba, at least $istotnie times better";
+	echo "<h3>$html</h3>";
+	
+	// wypisz listotnie epsze przybliżenia, jeśli jest ich przynajmniej $ile_razy mniej niż wszystkich
+	foreach( $liczniki_lepsze as $i => $l )
+	{
+		$m = $mianowniki_lepsze[$i];
+		$l = round( $liczba * $m );
+		$iloraz = 1.0 * $l / $m;
+		$delta = $liczba - $iloraz; 
+		$ile_times_better = $times_better[ $i ];
+				
+		Display_Approximation_Line( $lang, true, $i+1, $l, $m, 0, $iloraz, $delta, $ile_times_better );
+	}
 }
 
 ?>

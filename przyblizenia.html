@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Przybliżenia liczb algebraicznych i przestępnych</title>
+  <style type="text/css">
+	@media screen { body { background-color:#a0c0b0;}}
+	.nagl { background-color: #E0D8D0; color:#012;}
+	.odd  { background-color: #C0f0D0;}
+	.even { background-color: #C0D0f0;}
+	.red { color: red;}
+	.lepsze { font-weight:bold; color: #063;}
+	.best  { font-weight:bold; background-color: white; }
+	.odd:hover, .even:hover  { background-color: #A0E0C0;}
+	a { margin: 8px; }
+	xx { text-decoration:overline; }
+	label { text-align: right; display: inline-block; width: 250px; }
+	tt { font-family: "Courier New", Courier, monospace; font-weight:bold;}
+  </style>
+</head>
+<body>
+<a href="pomoc.html">Krótki opis</a>
+<h2>Przybliżenia liczb algebraicznych i przestępnych</h2>
+
+<p>Liczby niewymierne można przybliżać ułamkami. Dokładność tych przybliżeń jest związana z tym, czy liczba jest algebraiczna, czy przestępna, oraz ze stopniem liczby algebraicznej.</p>
+<p>Przybliżenie liczby algebraicznej stopnia <tt>p</tt> może być co najwyżej tego rzędu, co odwrotność mianownika do potęgi <tt>p</tt>.</p>
+<p>Niech <tt>A</tt> będzie przybliżaną liczbą,<br>
+ <tt>n/m</tt> ułamkiem (o mianowniku <tt>m</tt>) ją przybliżającym,<br>
+ <tt>D = A - n/m</tt> różnicą między liczbą a jej przybliżeniem, czyli dokładnością przybliżenia.</p>
+<p>Wówczas, dla liczby algebraicznej stopnia <tt>p</tt>, istnieje stała <tt>C</tt>, taka, że<br>
+<tt> D * m<sup>p</sup> >= C </tt></p>
+<p>Rozważmy przybliżenia pierwiastka z dwóch. <br>Najlepsze możliwe przybliżenie ułamkiem <tt>n/m</tt> spełnia warunek <tt> |n<sup>2</sup> - 2*m<sup>2</sup>| = 1</tt>.<br> 
+Gdy np. <tt>n<sup>2</sup> = 2*m<sup>2</sup>+1</tt>, to <br>
+<tt>(n/m)<sup>2</sup> = (2*m<sup>2</sup>+1)/m<sup>2</sup> = 2 + 1/m<sup>2</sup></tt>.<br>
+Więc skoro kwadrat przybliżenia <tt>(n/m)<sup>2</sup></tt> przybliża <tt>2</tt> z dokładnością nie większą niż <tt>1/m<sup>2</sup></tt>,<br>
+to i przybliżenie <tt>(n/m)</tt> przybliża <tt>&radic;<xx>2</xx></tt> z dokładnością nie większą niż <tt>C/m<sup>2</sup></tt> dla pewnej stałej <tt>C</tt>.<br>
+<pre>
+<h3>Przybliżenia liczby &radic;A = 1.4142135623731, A = 2</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D         l&sup2;-A*m&sup2;    * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1         3 /         2         1   1.500000000000  -0.085786437627            1     -4.8284     -0.343       -0.686     &#10004;     </span>
+<span class="even">  2         4 /         3         1   1.333333333333  +0.080880229040           -2     -1.0607     +0.728       +2.184           </span>
+<span class="odd lepsze">  3         7 /         5         2   1.400000000000  +0.014213562373           -1     +5.6904     +0.355       +1.777     &#10004;     </span>
+<span class="even lepsze">  4        17 /        12         7   1.416666666667  -0.002453104294            1     -5.7941     -0.353       -4.239     &#10004;     </span>
+<span class="odd">  5        24 /        17         5   1.411764705882  +0.002448856491           -2     -1.0017     +0.708      +12.031           </span>
+<span class="even lepsze">  6        41 /        29        12   1.413793103448  +0.000420458925           -1     +5.8242     +0.354      +10.255     &#10004;     </span>
+<span class="odd lepsze">  7        99 /        70        41   1.414285714286  -0.000072151913            1     -5.8274     -0.354      -24.748     &#10004;     </span>
+<span class="even">  8       140 /        99        29   1.414141414141  +0.000072148232           -2     -1.0001     +0.707      +70.005           </span>
+<span class="odd lepsze">  9       239 /       169        70   1.414201183432  +0.000012378941           -1     +5.8283     +0.354      +59.751     &#10004;     </span>
+<span class="even lepsze"> 10       577 /       408       239   1.414215686275  -0.000002123901            1     -5.8284     -0.354     -144.250     &#10004;     </span>
+<span class="odd"> 11       816 /       577       169   1.414211438475  +0.000002123898           -2     -1.0000     +0.707     +408.001           </span>
+<span class="even lepsze"> 12      1393 /       985       408   1.414213197970  +0.000000364404           -1     +5.8284     +0.354     +348.250     &#10004;     </span>
+<p>( 8 / 12 ) przybliżeń co najmniej 2 razy lepszych.</p>
+</pre>
+<p>Dla liczb będących pierwiastkami drugiego stopnia <tt>A = &radic;<xx>x</xx></tt>, wyrażenie <tt>D * m<sup>2</sup></tt> ma często podobne wartości.<br> Dla złotej proporcji <tt>&phi; = (1 + &radic;<xx>5</xx>)/2</tt> jest tak zawsze, gdyż przybliżające ją liczniki i mianowniki tworzą ciąg Fibonacciego.<br> Iloraz jego dwu sąsiednich wyrazów jest zawsze najlepszym przybliżeniem liczby <tt>&phi;</tt>.
+</p>
+
+<pre><h3>Przybliżenia liczby &phi; Złoty podział = 1.6180339887499</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1         3 /         2         1   1.500000000000  +0.118033988750     -3.2361     +0.472       +0.944     &#10004;     </span>
+<span class="even lepsze">  2         5 /         3         1   1.666666666667  -0.048632677917     -2.4271     -0.438       -1.313     &#10004;     </span>
+<span class="odd lepsze">  3         8 /         5         2   1.600000000000  +0.018033988750     -2.6967     +0.451       +2.254     &#10004;     </span>
+<span class="even lepsze">  4        13 /         8         3   1.625000000000  -0.006966011250     -2.5889     -0.446       -3.567     &#10004;     </span>
+<span class="odd lepsze">  5        21 /        13         5   1.615384615385  +0.002649373365     -2.6293     +0.448       +5.821     &#10004;     </span>
+<span class="even lepsze">  6        34 /        21         8   1.619047619048  -0.001013630298     -2.6137     -0.447       -9.387     &#10004;     </span>
+<span class="odd lepsze">  7        55 /        34        13   1.617647058824  +0.000386929926     -2.6197     +0.447      +15.208     &#10004;     </span>
+<span class="even lepsze">  8        89 /        55        21   1.618181818182  -0.000147829432     -2.6174     -0.447      -24.595     &#10004;     </span>
+<span class="odd lepsze">  9       144 /        89        34   1.617977528090  +0.000056460660     -2.6183     +0.447      +39.803     &#10004;     </span>
+<span class="even lepsze"> 10       233 /       144        55   1.618055555556  -0.000021566806     -2.6179     -0.447      -64.398     &#10004;     </span>
+<span class="odd lepsze"> 11       377 /       233        89   1.618025751073  +0.000008237677     -2.6181     +0.447     +104.201     &#10004;     </span>
+<span class="even lepsze"> 12       610 /       377       144   1.618037135279  -0.000003146529     -2.6180     -0.447     -168.599     &#10004;     </span>
+<span class="odd lepsze"> 13       987 /       610       233   1.618032786885  +0.000001201865     -2.6180     +0.447     +272.800     &#10004;     </span>
+<span class="even lepsze"> 14      1597 /       987       377   1.618034447822  -0.000000459072     -2.6180     -0.447     -441.400     &#10004;     </span>
+<span class="odd lepsze"> 15      2584 /      1597       610   1.618033813400  +0.000000175350     -2.6180     +0.447     +714.200     &#10004;     </span>
+<span class="even lepsze"> 16      4181 /      2584       987   1.618034055728  -0.000000066978     -2.6180     -0.447    -1155.600     &#10004;     </span>
+<span class="odd lepsze"> 17      6765 /      4181      1597   1.618033963167  +0.000000025583     -2.6180     +0.447    +1869.800     &#10004;     </span>
+<span class="even lepsze"> 18     10946 /      6765      2584   1.618033998522  -0.000000009772     -2.6180     -0.447    -3025.400     &#10004;     </span>
+</pre>
+
+<p>Dla pierwiastków trzeciego i wyższych stopni nie jest aż tak dobrze.<br>
+Dla przybliżeń <tt><sup>3</sup>&radic;<xx>2</xx></tt> ułamkami <tt>n/m</tt>, można zauważyć, że <br><tt>|n<sup>3</sup> - 2*m<sup>3</sup>| </tt> 
+zawsze jest dużo większe od <tt>1</tt>.</p>
+<p>Mimo to, dla liczb algebraicznych wyższych stopni, a także, dla liczb przestępnych, są przybliżenia, dla których <i>Dokładność * sześcian mianownika</i> <tt>D * m<sup>3</sup></tt>, ma niewielką wartość, co nie zachodzi dla liczb drugiego stopnia.
+</p>
+<p>Dla przykładu, liczba <tt>&radic;<xx>3</xx>-&radic;<xx>2</xx></tt> jest liczbą algebraiczną czwartego stopnia, gdyż jest pierwiatkiem równania <tt>x<sup>4</sup> -10x<sup>2</sup> + 1 = 0</tt>.<br>
+ Podobnie <tt>&radic;<xx>5</xx>-&radic;<xx>3</xx>+&radic;<xx>2</xx></tt> jest ósmego stopnia. Niektóre ich przybliżenia są bardzo dokładne, jak ilustrują poniższe tabele:</p>
+ <pre>
+ <h3>Przybliżenia liczby &radic;<xx>3</xx>-&radic;<xx>2</xx> = 0.31783724519578</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1         1 /         2         1   0.500000000000  -0.182162754804     -1.7448     -0.729       -1.457           </span>
+<span class="even lepsze">  2         1 /         3         1   0.333333333333  -0.015496088138    +11.7554     -0.139       -0.418     &#10004;     </span>
+<span class="odd">  ........                                                                                                          </span>
+<span class="even"> 12       253 /       796       129   0.317839195980  -0.000001950784     +1.9655     -1.236     -983.894           </span>
+<span class="odd lepsze"> 13       294 /       925       129   0.317837837838  -0.000000592642     +3.2917     -0.507     -469.048     &#10004;     </span>
+<span class="even"> 14       335 /      1054       129   0.317836812144  +0.000000433052     -1.3685     +0.481     +507.062           </span>
+<span class="odd lepsze"> 15       629 /      1979       925   0.317837291561  -0.000000046366     -9.3399     -0.182     -359.363     &#10004;     </span>
+<span class="even"> 16      2222 /      6991      5012   0.317837219282  +0.000000025914     -1.7892     +1.267    +8854.210           </span>
+<span class="odd lepsze"> 17      2851 /      8970      1979   0.317837235229  +0.000000009967     +2.5999     +0.802    +7193.701     &#10004;     </span>
+<span class="even lepsze"> 18      3480 /     10949      1979   0.317837245411  -0.000000000215    -46.4116     -0.026     -281.885     &#10004;     </span>
+<span class="odd"> 19     68971 /    217001    206052   0.317837244990  +0.000000000206     -1.0419     +9.706 +2106305.607           </span>
+
+<h3>Przybliżenia liczby &radic;<xx>5</xx>-&radic;<xx>3</xx>+&radic;<xx>2</xx> = 1.918230732304</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="even lepsze"> 14      1431 /       746       159   1.918230563003  +0.000000169301    +14.4885     +0.094      +70.287     &#10004;     </span>
+<span class="odd"> 15      8891 /      4635      3889   1.918230852211  -0.000000119907     -1.4119     -2.576   -11939.752           </span>
+<span class="even"> 16     10322 /      5381       746   1.918230812117  -0.000000079813     +1.5024     -2.311   -12435.435           </span>
+<span class="odd"> 17     11753 /      6127       746   1.918230781786  -0.000000049482     +1.6130     -1.858   -11381.166           </span>
+<span class="even"> 18     13184 /      6873       746   1.918230758039  -0.000000025735     +1.9228     -1.216    -8355.223           </span>
+<span class="odd lepsze"> 19     14615 /      7619       746   1.918230738942  -0.000000006638     +3.8768     -0.385    -2935.881     &#10004;     </span>
+<span class="even lepsze"> 20     30661 /     15984      8365   1.918230730731  +0.000000001573     -4.2193     +0.402    +6424.830     &#10004;     </span>
+<span class="odd"> 21     45276 /     23603      7619   1.918230733381  -0.000000001077     -1.4603     -0.600   -14166.260           </span>
+<span class="even lepsze"> 22     75937 /     39587     15984   1.918230732311  -0.000000000007   +151.6414     -0.011     -440.751     &#10004;     </span>
+
+</pre>
+<p>Kolumna <span class="nagl">&nbsp;* lepiej </span> mówi, ile razy dane przybliżenie jest lepsze, niż poprzednie najlepsze przybliżenie.<br>
+Jak widać, dla liczb stopni wyższych niż dwa, oraz dla liczb przestępnych, a także dla liczb losowych, pojawiają się w niej duże wartości.
+</p>
+<p></p>
+<p>Chciałbym by moja praca przyczyniła się do poznania struktur ukrytych w liczbach.</p>
+<p>W fizyce istnieją różne stałe. Najciekawsze są stałe bezwymiarowe. Być może, odpowiadają one za geometrię wszechświata, i lepsze ich poznanie pomogłoby zrozumieć naturę świata stworzonego.<br><br>
+Celem moich eksperymentów z przybliżeniami, było sprawdzenie (na podstawie dokładności przybliżeń), czy czasem te stałe fizyczne nie są liczbami przestępnymi (które teoretycznie mogą się dać przybliżać z dowolną dokładnością), lub algebraicznymi określonego stopnia. </p>
+<p>Same przybliżenia, nawet bardzo dobre, nie mówią wszystkiego. Może dla dobrych przybliżeń, dałoby się je rozwinąć na ułamki łańcuchowe o ciekawej strukturze i zobaczyć jakieś wzorce strukturalne. Gdyby te wzorce istniały, to możnaby za ich pomocą wygenerować jakiś wzór iteracyjny określający daną liczbę, służący do obliczeń, lub nawet wzór dający kolejne istotnie lepsze przybliżenia. </p><p>Może też badając kolejne dużo lepsze przybliżenia (kilkanaście - kilkaset razy), da się odkryć jakieś prawidłowości. 
+</p>
+<P>Zaintrygowały mnie przybliżenia liczby <tt>Z0 </tt> ( characteristic impedance of vacuum ) = <tt>376.730313461</tt>.<br>
+ <pre>
+<h3>Przybliżenia liczby characteristic impedance of vacuum = 376.730313461</h3>
+<span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3; Lepsze Łańcuch </span>
+<span class="odd">  1       753 /         2         1 376.500000000000  +0.230313461000     -1.1710     +0.921       +1.843                 </span>
+<span class="even lepsze in_fraction">  2      1130 /         3         1 376.666666666667  +0.063646794333     +3.6186     +0.573       +1.718     &#10004;    2 &#10004;    </span>
+<span class="odd lepsze in_fraction">  3      1507 /         4         1 376.750000000000  -0.019686539000     -3.2330     -0.315       -1.260     &#10004;    1 &#10004;    </span>
+<span class="even">  4      2637 /         7         3 376.714285714286  +0.016027746714     -1.2283     +0.785       +5.498                 </span>
+<span class="odd lepsze in_fraction">  5      4144 /        11         4 376.727272727273  +0.003040733727     +5.2710     +0.368       +4.047     &#10004;    2 &#10004;    </span>
+<span class="even">  6      5651 /        15         4 376.733333333333  -0.003019872333     -1.0069     -0.679      -10.192                 </span>
+<span class="odd lepsze in_fraction">  7      9795 /        26        11 376.730769230769  -0.000455769769     +6.6259     -0.308       -8.011     &#10004;    2 &#10004;    </span>
+<span class="even lepsze in_fraction">  8     23734 /        63        37 376.730158730159  +0.000154730841     -2.9456     +0.614      +38.690     &#10004;    2 &#10004;    </span>
+<span class="odd lepsze in_fraction">  9     33529 /        89        26 376.730337078652  -0.000023617652     -6.5515     -0.187      -16.650     &#10004;    1 &#10004;    </span>
+<span class="even"> 10     90792 /       241       152 376.730290456432  +0.000023004568     -1.0267     +1.336     +322.007                 </span>
+<span class="odd lepsze"> 11    124321 /       330        89 376.730303030303  +0.000010430697     +2.2055     +1.136     +374.848     &#10004;           </span>
+<span class="even lepsze in_fraction"> 12    157850 /       419        89 376.730310262530  +0.000003198470     +3.2612     +0.562     +235.280     &#10004;    4 &#10004;    </span>
+<span class="odd lepsze in_fraction"> 13    191379 /       508        89 376.730314960630  -0.000001499630     -2.1328     -0.387     -196.596     &#10004;    1 &#10004;    </span>
+<span class="even lepsze in_fraction"> 14    349229 /       927       419 376.730312837109  +0.000000623891     -2.4037     +0.536     +496.990     &#10004;    1 &#10004;    </span>
+<span class="odd lepsze in_fraction"> 15    540608 /      1435       508 376.730313588850  -0.000000127850     -4.8799     -0.263     -377.796     &#10004;    1 &#10004;    </span>
+<span class="even lepsze"> 16   1430445 /      3797      2362 376.730313405320  +0.000000055680     -2.2962     +0.803    +3048.043     &#10004;           </span>
+<span class="odd lepsze in_fraction"> 17   1971053 /      5232      1435 376.730313455657  +0.000000005342    +10.4221     +0.146     +765.150     &#10004;    3 &#10004;    </span>
+<span class="even"> 18   8424820 /     22363     17131 376.730313464204  -0.000000003204     -1.6673     -1.602   -35835.908                 </span>
+<span class="odd lepsze"> 19  10395873 /     27595      5232 376.730313462584  -0.000000001584     +2.0231     -1.206   -33281.222     &#10004;           </span>
+<span class="even lepsze in_fraction"> 20  12366926 /     32827      5232 376.730313461480  -0.000000000480     +3.3005     -0.517   -16975.365     &#10004;    6 &#10004;    </span>
+<span class="odd in_fraction"> 21  14337979 /     38059      5232 376.730313460679  +0.000000000320     -1.4973     +0.464   +17667.593          1 &#10004;    </span>
+<span class="even lepsze in_fraction"> 22  26704905 /     70886     32827 376.730313461050  -0.000000000050     -6.3923     -0.252   -17857.892     &#10004;    1 &#10004;    </span>
+<span class="odd"> 23  67747789 /    179831    108945 376.730313460972  +0.000000000028     -1.7711     +0.915  +164627.814                 </span>
+<span class="even lepsze in_fraction"> 24  94452694 /    250717     70886 376.730313460994  +0.000000000006     +4.6542     +0.382   +95855.120     &#10004;    3 &#10004;    </span>
+<span class="odd lepsze in_fraction"> 25 215610293 /    572320    321603 376.730313461001  -0.000000000001     -7.1333     -0.279  -159841.011     &#10004;    2 &#10004;    </span>
+<span class="even lepsze"> 26 525673280 /   1395357    823037 376.730313461000  +0.000000000000     -2.1429     +0.775 +1081021.265     &#10004;           </span>
+<span class="odd lepsze in_fraction"> 27 741283573 /   1967677    572320 376.730313461000  +0.000000000000     +7.0000     +0.220  +433053.565     &#10004;    3 &#10004;    </span>
+</p>
+</pre>
+
+</p>
+Ciąg mianowników <tt>3, 4, 7, 11, 15, 26, 63, 89, 241, 330, 419, 508, 927, 1435, 3797, 5232, 22363, 27595, 32827, 38059, 70886,... </tt>ma podobne własności, jak ciąg Fibonacciego - kolejne mianowniki sumują się : <br><br>
+<tt>3 + 4 = 7, 4 + 7 = 11</tt><br>
+<tt>11 + 15 = 26, 26 + 63 = 89</tt><br>
+<tt>89 + 241 = 330</tt><br>
+<tt>419 + 508 = 927, 508 + 927 = 1435, 1435 + 3797 = 5232, 5232 + 22363 = 27595</tt><br>
+<tt>32827 + 38059 = 70886</tt><br><br>
+
+ 
+ Zastanawiałem się, czy są to jej nadzwyczajne właściwości, że wiele mianowników kolejnych przybliżeń jest sumą poprzednich. Podobnej regularności nie spotkałem, poza złotym podziałem, który spełnia równanie <tt>x = 1 + 1/x</tt> i rozwija się na ułamek łańcuchowy, w którym występują same jedynki, a przybliżenia stanowią ciąg Fibbonaciego, dla którego suma dwu wyrazów jest równa następnemu.<br>
+</p>
+<p>Próbowałem dociekać, czym jest spowodowana regularność przybliżeń liczby <tt>Z0</tt>.</p>
+<p>
+Normalną sprawą jest że różnica mianowników jest przez pewien czas stała. <br>
+Po dobrym przybliżeniu, często występuje ciąg gorszych przybliżeń, dla mianowników rosnących o pewną stałą, będącą np. mianownikiem z najlepszego przybliżenia. <br>Tak jest dla wielu liczb, np dla &pi;. <br>
+Ma to związek z rozwinięciem tych przybliżeń na ułamek łańcuchowy:
+<pre>
+	3     /    1 = 3                  = [ 3 ]
+	22    /    7 = 3.142857142857143  = [ 3, 7 ]
+	333   /  106 = 3.141509433962264  = [ 3, 7, 15 ] &lt; &pi; &lt; [ 3, 7, 16 ]
+	355   /  113 = 3.1415929203539825 = [ 3, 7, 16 ] 
+		16 * 7 = 112, 16 = 113 div 7
+
+	52163 /16604 = 3.141592387376536  = [ 3, 7, 15, 1, 146 ]
+	52518 /16717 = 3.1415923909792425 = [ 3, 7, 15, 1, 147 ]
+	....
+	102573/32650 = 3.141592649310873  = [ 3, 7, 15, 1, 288 ]
+
+	103638/32989 = 3.1415926520961532 = [ 3, 7, 15, 1, 291 ]
+	103993/33102 = 3.1415926530119025 = [ 3, 7, 15, 1, 292 ]
+		292*113=32996 &lt; 33102 &lt; 293*113 = 33109
+	208341/66317  = 3.1415926534674368 = [ 3, 7, 15, 1, 292, 2 ]
+</pre>
+Kolumna Łańcuch zawiera kolejny wyraz rozwinięcia na ułamek łańcuchowy
+</p>
+<p>
+O ułamkach okresowych można poczytać <a href="http://personal.ee.surrey.ac.uk/Personal/R.Knott/Fibonacci/cfINTRO.html#">tutaj</a>
+</p>
+
+<pre>
+<h3>Przybliżenia liczby &pi; = 3.1415926535898</h3>
+<span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3; Lepsze Łańcuch </span>
+<span class="even lepsze">  4        19 /         6         1   3.166666666667  -0.025074013077     +2.3294     -0.903       -5.416     &#10004;           </span>
+<span class="odd lepsze in_fraction">  5        22 /         7         1   3.142857142857  -0.001264489267    +19.8294     -0.062       -0.434     &#10004;    7 &#10004;    </span>
+<span class="even">  6       179 /        57        50   3.140350877193  +0.001241776397     -1.0183     +4.035     +229.968                 </span>
+<span class="odd">  7       201 /        64         7   3.140625000000  +0.000967653590     +1.2833     +3.964     +253.665                 </span>
+<span class="even">  8       223 /        71         7   3.140845070423  +0.000747583167     +1.2944     +3.769     +267.568                 </span>
+...
+<span class="odd lepsze in_fraction"> 13       333 /       106         7   3.141509433962  +0.000083219628     +2.1451     +0.935      +99.116     &#10004;   15 &#10004;    </span>
+<span class="even lepsze in_fraction"> 14       355 /       113         7   3.141592920354  -0.000000266764   -311.9595     -0.003       -0.385     &#10004;    1 &#10004;    </span>
+<span class="odd"> 15     52163 /     16604     16491   3.141592387377  +0.000000266213     -1.0021    +73.393 +1218618.742                 </span>
+<span class="even"> 16     52518 /     16717       113   3.141592390979  +0.000000262611     +1.0137    +73.389 +1226837.939                 </span>
+<span class="odd"> 17     52873 /     16830       113   3.141592394534  +0.000000259056     +1.0137    +73.377 +1234941.474                 </span>
+<span class="even"> 18     53228 /     16943       113   3.141592398040  +0.000000255549     +1.0137    +73.359 +1242927.038                 </span>
+....
+<span class="odd">157    102573 /     32650       113   3.141592649311  +0.000000004279     +1.2200     +4.561  +148930.538                 </span>
+<span class="even">158    102928 /     32763       113   3.141592650246  +0.000000003344     +1.2795     +3.590  +117605.820                 </span>
+<span class="odd">159    103283 /     32876       113   3.141592651174  +0.000000002416     +1.3843     +2.611   +85837.515                 </span>
+<span class="even">160    103638 /     32989       113   3.141592652096  +0.000000001494     +1.6173     +1.625   +53623.277                 </span>
+<span class="odd lepsze in_fraction">161    103993 /     33102       113   3.141592653012  +0.000000000578     +2.5846     +0.633   +20960.824     &#10004;  292 &#10004;    </span>
+<span class="even in_fraction">162    104348 /     33215       113   3.141592653921  -0.000000000332     -1.7426     -0.366   -12152.176          1 &#10004;    </span>
+<span class="odd lepsze in_fraction">163    208341 /     66317     33102   3.141592653467  +0.000000000122     -2.7103     +0.538   +35686.267     &#10004;    1 &#10004;    </span>
+<span class="even lepsze in_fraction">164    312689 /     99532     33215   3.141592653619  -0.000000000029     -4.1984     -0.289   -28736.094     &#10004;    1 &#10004;    </span>
+<span class="odd lepsze in_fraction">165    833719 /    265381    165849   3.141592653581  +0.000000000009     -3.3439     +0.614  +162888.103     &#10004;    2 &#10004;    </span>
+<span class="even lepsze in_fraction">166   1146408 /    364913     99532   3.141592653591  -0.000000000002     -5.4108     -0.214   -78268.279     &#10004;    1 &#10004;    </span>
+<span class="odd">167   3126535 /    995207    630294   3.141592653589  +0.000000000001     -1.4096     +1.132 +1126290.118                 </span>
+</pre>
+<p>
+Ale, czymś innym jest chyba to, że zawsze kolejne mianowniki dla Z0 sumują się do następnego,np.<br>
+<pre>
+3 + 4 = 7
+4 + 7 = 11              7 + 11 się nie sumuje, ale 11 + 15 tak
+11 + 15 = 26
+26 + 63 = 89
+89 + 241 = 330          241 + 330, ani 330 + 419 się nie sumuje, ale już 419 + 508 tak, więc każdy mianownik jest w jakiejś sumie; jako składnik lub suma, lub tu i tu.
+419 + 508 = 927         
+1435 + 3797 = 5232
+5232 + 22363 = 27595
+...
+</p>
+</pre>
+<p>Wyjaśniło mi się to częciowo, gdy zrozumiałem, że ułamki łańcuchowe stanowią najlepsze przybliżenia liczb rzeczywistych.
+Liczba Z0=376.730313461 ma następujące rozwinięcie na ułamek łańcuchowy:
+<pre>
+	376, 1, 2, 1, 2, 2, 2, 1, 4, 1, 1, 1, 3, 6, 1, 1, 3, 2, 3, 8 ...
+</pre>
+Te liczby mówią, ile razy mieści się w danym mianowniku, mianownik poprzedniego ułamka.<br>
+ Np. liczba 4 w wierszu dla mianownika 419 mówi, że poprzedni mianownik ułamka (89) mieści się 4 razy w 419.<br>
+ 33529/89 = 376.7303370786517 = 376, 1, 2, 1, 2, 2, 3
+
+ 157850/419  = 376.7303102625298 = [ 376, 1, 2, 1, 2, 2, 2, 1, 4 ]
+<pre>
+<span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3; Lepsze Łańcuch </span>
+<span class="odd lepsze in_fraction">  9     33529 /        <span class="red">89</span>        26 376.730337078652  -0.000023617652     -6.5515     -0.187      -16.650     &#10004;    1 &#10004;    </span>
+<span class="even"> 10     90792 /       241       152 376.730290456432  +0.000023004568     -1.0267     +1.336     +322.007                 </span>
+<span class="odd lepsze"> 11    124321 /       330        89 376.730303030303  +0.000010430697     +2.2055     +1.136     +374.848     &#10004;           </span>
+<span class="even lepsze in_fraction"> 12    157850 /       <span class="red">419</span>        89 376.730310262530  +0.000003198470     +3.2612     +0.562     +235.280     &#10004;    <span class="red">4</span> &#10004;    </span>
+<span class="odd lepsze in_fraction"> 13    191379 /       508        89 376.730314960630  -0.000001499630     -2.1328     -0.387     -196.596     &#10004;    1 &#10004;    </span>
+<span class="even lepsze in_fraction"> 14    349229 /       927       419 376.730312837109  +0.000000623891     -2.4037     +0.536     +496.990     &#10004;    1 &#10004;    </span>
+</pre>
+
+ Jeśli m1, m2, m3 są kolejnymi mianownikami, a dla m2 i m3 w kolumnie "Łańcuch" są jedynki, oznacza to, że <pre>m1+m2=m3</pre><br>
+ Np. 419+508=927, bo 508 i 927 mają jedynki w tej kolumnie.
+ </p><p>
+ Za pomocą strony do <a href="http://personal.ee.surrey.ac.uk/Personal/R.Knott/Fibonacci/cfCALC.html">konwersji ułamków łańcuchowych</a>, skonstruowałem liczbę o podobnych właściwościach. <br>
+ Zauważmy, że przed wierszem z kolumną Łańcuch równą 2, np. 782/495<br>
+ pojawia się niekiedy dodatkowy wiersz (485/307), co sprawia że mianowniki nadal się sumują: 188+307=495.<br><br>
+ Na marginesie:<br>
+ 485/307 = 1.5798045602605864 = [ 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2 ] <br>
+ 782/495 = 1.5797979797979798 = [ 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2 ]
+ </p>
+ <pre>
+  <h3>Przybliżenia liczby [ 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1] = 1.579795900866135</h3>
+<span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3; Lepsze Łańcuch </span>
+<span class="odd lepsze in_fraction">  1         3 /         2         1   1.500000000000  +0.079795900866     -5.2660     +0.319       +0.638     &#10004;    1 &#10004;    </span>
+<span class="even lepsze in_fraction">  2         8 /         5         3   1.600000000000  -0.020204099134     -3.9495     -0.505       -2.526     &#10004;    2 &#10004;    </span>
+<span class="odd lepsze in_fraction">  3        11 /         7         2   1.571428571429  +0.008367329438     -2.4146     +0.410       +2.870     &#10004;    1 &#10004;    </span>
+<span class="even lepsze in_fraction">  4        19 /        12         5   1.583333333333  -0.003537432467     -2.3654     -0.509       -6.113     &#10004;    1 &#10004;    </span>
+<span class="odd lepsze in_fraction">  5        30 /        19         7   1.578947368421  +0.000848532445     -4.1689     +0.306       +5.820     &#10004;    1 &#10004;    </span>
+<span class="even lepsze in_fraction">  6        79 /        50        31   1.580000000000  -0.000204099134     -4.1575     -0.510      -25.512     &#10004;    2 &#10004;    </span>
+<span class="odd lepsze in_fraction">  7       109 /        69        19   1.579710144928  +0.000085755939     -2.3800     +0.408      +28.172     &#10004;    1 &#10004;    </span>
+<span class="even lepsze in_fraction">  8       188 /       119        50   1.579831932773  -0.000036031907     -2.3800     -0.510      -60.719     &#10004;    1 &#10004;    </span>
+<span class="odd lepsze in_fraction">  9       297 /       <span class="red">188</span>        69   1.579787234043  +0.000008666824     -4.1575     +0.306      +57.588     &#10004;    1 &#10004;    </span>
+<span class="even"> 10       485 /       <span class="red">307</span>       119   1.579804560261  -0.000008659394     -1.0009     -0.816     -250.555                 </span>
+<span class="odd lepsze in_fraction"> 11       782 /       <span class="red">495</span>       188   1.579797979798  -0.000002078932     +4.1653     -0.509     -252.148     &#10004;    <span class="red">2</span> &#10004;    </span>
+<span class="even lepsze in_fraction"> 12      1079 /       683       188   1.579795021962  +0.000000878904     -2.3654     +0.410     +280.029     &#10004;    1 &#10004;    </span>
+<span class="odd lepsze in_fraction"> 13      1861 /      1178       495   1.579796264856  -0.000000363990     -2.4146     -0.505     -595.011     &#10004;    1 &#10004;    </span>
+<span class="even lepsze in_fraction"> 14      2940 /      1861       683   1.579795808705  +0.000000092161     -3.9495     +0.319     +594.001     &#10004;    1 &#10004;    </span>
+<span class="odd"> 15      4801 /      3039      1178   1.579795985522  -0.000000084655     -1.0887     -0.782    -2376.002                 </span>
+<span class="even lepsze in_fraction"> 16      7741 /      4900      1861   1.579795918367  -0.000000017501     +4.8371     -0.420    -2059.000     &#10004;    2 &#10004;    </span>
+<span class="odd"> 17     10681 /      6761      1861   1.579795888182  +0.000000012684     -1.3798     +0.580    +3920.000                 </span>
+<span class="even lepsze in_fraction"> 18     18422 /     11661      4900   1.579795900866  +0.000000000000   Dokładnie     +0.000       +0.000     &#10004;    2 &#10004;    </span>
+</p>
+</pre>
+<p>Jest dla mnie zagadkowe, że dla liczby Z0, każdy mianownik jest w jakiejś sumie, choć ułamku łańcuchowym są większe liczby niż 1 i 2.
+ </p>
+<p>Przybliżenia innych stałych nie mają takich łatwych do zauważenia właściwości. 
+Niektóre współczynniki są bardzo duże (515):<br>
+Dla bezwymiarowej <b>stałej struktury subtelnej &alpha;</b> rozwinięcie w ułamek łańcuchowy jest następujące:
+<pre>
+&alpha;   = 0.007297352566417 =     0, 137, 27, 1, 3, 1, 1, 18, 515, 1, 11 ...
+&alpha;<sup>-1</sup> = 137.03599913783526905989 = 137, 27, 1, 3, 1, 1, 18, 515, 1 ..., lub
+&alpha;<sup>-1</sup> = 137.03599913931 =          137, 27, 1, 3, 1, 1, 18, 29, 1, 1, 1, 3, 1, 3 ...
+
+<h3>Przybliżenia liczby alfa = 0.007297352566417</h3>
+<span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3; Lepsze Łańcuch </span>
+<span class="even lepsze in_fraction"> 70         1 /       137         1   0.007299270073  -0.000001917507    +28.9900     -0.036       -4.931     &#10004;  137 &#10004;    </span>
+...
+<span class="even lepsze in_fraction"> 84        27 /      3700       137   0.007297297297  +0.000000055269     +2.3725     +0.757    +2799.547     &#10004;   27 &#10004;    </span>
+<span class="odd lepsze in_fraction"> 85        28 /      3837       137   0.007297367735  -0.000000015169     -3.6436     -0.223     -856.893     &#10004;    1 &#10004;    </span>
+<span class="even"> 86        83 /     11374      7537   0.007297344822  +0.000000007745     -1.9586     +1.002   +11396.071                 </span>
+<span class="odd lepsze in_fraction"> 87       111 /     15211      3837   0.007297350602  +0.000000001965     +3.9417     +0.455    +6915.268     &#10004;    3 &#10004;    </span>
+<span class="even in_fraction"> 88       139 /     19048      3837   0.007297354053  -0.000000001487     -1.3218     -0.539   -10273.387          1 &#10004;    </span>
+<span class="odd lepsze in_fraction"> 89       250 /     34259     15211   0.007297352521  +0.000000000046    -32.3776     +0.054    +1846.056     &#10004;    1 &#10004;    </span>
+...
+<span class="odd"> 97      4139 /    567192     34259   0.007297352572  -0.000000000006     +1.5959     -1.786 -1012993.101                 </span>
+<span class="even lepsze"> 98      4389 /    601451     34259   0.007297352569  -0.000000000003     +2.1188     -0.948  -570081.668     &#10004;           </span>
+<span class="odd lepsze in_fraction"> 99      4639 /    635710     34259   0.007297352566  -0.000000000000   +546.3733     -0.002    -1232.038     &#10004;   18 &#10004;    </span>
+</pre>
+</p>
+
+<p>Dla ciekawości podaję kilka rozwinięć pierwiastków kwadratowych na ułamki łańcuchowe. 
+Można je obliczyć <a href="http://personal.ee.surrey.ac.uk/Personal/R.Knott/Fibonacci/cfCALC.html#">na tej stronie</a>. Klamry oznaczają okresowość.</p>
+
+<pre>
+	
+sqrt(2)       = 1.4142135623730951 = 1, [2]
+sqrt(3)       = 1.7320508075688772 = 1, [1, 2]
+sqrt(5)       = 2.23606797749979   = 2, [4]
+sqrt(5)/2     = 1.118033988749895  = 1, [8, 2]
+(1+sqrt(5))/2 = 1.618033988749895  = 1, [1] = &phi; = złota proporcja
+sqrt(7)       = 2.6457513110645907 = 2, [1, 1, 1, 4]
+sqrt(8)       = 2.8284271247461903 = 2, [1, 4]
+sqrt(13)      = 3.605551275463989  = 3, [1, 1, 1, 1, 6]
+sqrt(15)      = 3.872983346207417  = 3, [1, 6]
+sqrt(17)      = 4.123105625617661  = 4, [8]
+sqrt(19)      = 4.358898943540674  = 4, [2, 1, 3, 1, 2, 8]
+sqrt(61)      = 7.810249675906654  = 7, [1, 4, 3, 1, 2, 2, 1, 3, 4, 1, 14]
+sqrt(71)      = 8.426149773176359  = 8, [2, 2, 1, 7, 1, 2, 2, 16]
+</pre>
+</p>
+<br>Interesująca jest interpretacja geometryczna ułamków łańcuchowych:<br><a href="http://personal.ee.surrey.ac.uk/Personal/R.Knott/Fibonacci/cfINTRO.html#intro"><img src="45by16cf5.gif" />Podział prostokąta na kwadraty.</a>
+<br><br>
+<p>Dostarczyłem prostego narzędzia - skryptu, który korzysta z obliczeń na liczbach float w PHP.<br>Może go zmodyfikuję,
+ by prowadził obliczenia na liczbach dowolnej precyzji.<br> W używanym zakresie liczb wystarczają liczby float.
+ </p>
+ 
+<p>Skrypt znajduje coraz to lepsze przybliżenia liczb za pomocą ułamków.</p>
+<p>Oblicza dokładność przybliżeń dla mianowników będących kolejnymi liczbami naturalnymi.</p>
+<p>Jeśli znajdzie przybliżenie lepsze, niż wszystkie dotyczasowe, wypisuje je, wraz z liczbami określającymi jakość przybliżenia: 
+<ul>
+<li>licznik, mianownik, różnica mianowników, iloraz, różnica <tt>D</tt> między liczbą przybliżaną, a ilorazem,
+<li>ile razy jest ono lepsze, niż poprzednie najlepsze przybliżenie, </li>
+<li><tt>l²-A*m²</tt> - dla przybliżeń pierwiastka kwadratowego: kwadrat licznika - liczba przybliżana * kwadrat mianownika<br>
+Wyróżniam <span class="lepsze best">&nbsp;na biało&nbsp;</span> cały wiersz tabeli z najlepszym przybliżeniem pierwiastka, dla którego wartość tej kolumny wynosi 1 lub -1.<br>
+Robię to dla liczb >= 7; dla mniejszych liczb traciłoby się czytelność, gdyż prawie wszystko byłoby wyróżniane. <br>
+Dla pierwiastków z liczb naturalnych widać okresowość w kolumnnach <tt>l²-A*m²</tt> i <tt>* lepiej</tt>.
+</li>
+<li><tt>l³-A*m³</tt> - dla przybliżeń pierwiastka trzeciego stopnia: sześcian licznika - liczba przybliżana * sześcian mianownika</li>
+<li><tt>D * m²</tt> - Dokładność * kwadrat mianownika </li>
+<li><tt>D * m³</tt> - Dokładność * sześcian mianownika </li>
+<li>W kolumnie <span class="nagl">&nbsp;Lepsze </span> zaznaczamy <span class="lepsze"> &#10004;</span>, gdy jest ono co najmniej <tt>istotnie razy</tt> lepsze od poprzedniego</li>
+</ul>
+</p>
+<p>Dostępne są następujące parametry skryptu:<br><br>
+<label><tt>number</tt></label> - liczba przybliżana z kropką dziesiętną<br>
+<label><tt>name</tt></label> - opcjonalna nazwa tej liczby<br>
+<label><tt>limit</tt></label> - maksymalny mianownik<br>
+<label><tt>lang</tt></label> - język <tt>pl</tt>, lub <tt>en</tt><br>
+<label><tt>istotnie</tt></label> - ile razy dokładniejsze od poprzedniego ma być przybliżenie, które jest zaznaczane <span class="lepsze"> &#10004;</span> <br>
+<label><tt>any</tt></label> - przybliżanie dowolnej liczby podanej przez użytkownika<br>
+<label><tt>rootlist</tt></label> - lista liczb, dla których wypiszemy przybliżenia pierwiastka kwadratowego<br>
+<label><tt>root3list</tt></label> - lista liczb, dla których wypiszemy przybliżenia pierwiastka trzeciego stopnia<br>
+
+</p>
+<p>Przykład użycia skryptu:<br><br>
+<a href="approx.php?lang=pl&limit=1000"><tt>approx.php?lang=pl&limit=1000</tt></a> - przybliżenia wszystkich liczb określonych w skrypcie<br>
+<a href="approx.php?name=z0"><tt>approx.php?name=z0</tt></a> - przybliżenia liczby z0 - characteristic impedance of vacuum<br>
+<br>Wystarczy podać samą nazwę dla liczb: <tt>g, z0, pi, e, r2, r3_2, r4_2</tt> itd.<br><br>
+<a href="approx.php?name=pi&lang=pl&limit=1000000"><tt>approx.php?name=pi&lang=pl&limit=1000000</tt></a> - przybliżenia &pi; dla mianowników do miliona <br>
+<a href="approx.php?name=pi&istotnie=3"><tt>approx.php?&name=pi&istotnie=3</tt></a> - przybliżenia &pi; z zaznaczeniem przybliżeń 3 razy lepszych <br>
+<a href="approx.php?any&lang=en"><tt>approx.php?any&lang=en</tt></a> - approximations of any number given by user<br>
+<a href ="approx.php?rootlist=7,13,17,19,29,61,71"><tt>approx.php?rootlist=7,13,17,19,29,61,71</tt></a> - oblicz przybliżenia √7 √ 13 √ 17 √ 19 √ 29 √ 61 i √ 71<br>
+<a href ="approx.php?rootlist"><tt>approx.php?rootlist</tt></a> - ten sam skutek: wystarczy podać sam parametr rootlist, a zostanie wybrana powyższa lista liczb<br>
+<a href="approx.php?rootlist&limit=4000000"><tt>approx.php?rootlist&limit=4000000</tt></a> - Można podać duży max. mianownik, ale wtedy wykonanie trwa kilkanaście sekund.<br>
+
+<a href ="approx.php?root3list=2,3,4"><tt>approx.php?root3list=2,3,4</tt></a> - oblicz przybliżenia ³√2, ³√3 i ³√4<br>
+
+</p>
+<p>Do działania skryptu konieczne jest posiadanie serwera PHP, np. <a href="https://www.apachefriends.org/pl/index.html">XAMPP</a>.
+</p>
+<p>Jeśli nie chcemy instalować PHP, możemy obejrzeć wyniki działania skryptu (zwykłe pliki .html, widoczne w przeglądarce)<br>
+<a href="wyniki_1000.html"><kbd>wyniki_1000.html</kbd></a><br>
+<a href="wyniki_1000000.html"><kbd>wyniki_1000000.html</kbd></a><br>
+<a href="wyniki_pi.html"><kbd>wyniki_pi.html</kbd></a><br>
+<a href="wyniki_rootlist.html"><kbd>wyniki_rootlist.html</kbd></a><br>
+<a href="wyniki_root3list.html"><kbd>wyniki_root3list.html</kbd></a> ..., czyli <br><br>
+
+<a href="wyniki_1000.html">przybliżenia wybranych liczb dla mianowników do tysiąca </a> <br>
+<a href="wyniki_1000000.html">przybliżenia wybranych liczb dla mianowników do miliona </a><br>
+<a href="wyniki_pi.html">przybliżenia liczby pi </a><br>
+<a href="wyniki_rootlist.html">przybliżenia √7 √ 13 √ 17 √ 19 √ 29 √ 61 i √ 71</a><br>
+<a href="wyniki_root3list.html">przybliżenia ³√2, ³√3 i ³√4 </a><br>
+</p>
+
+<p>Posyłam pliki z bieżącą wersją skryptu. Gdy zakończe pracę, umieszczę je w repozytorium na stronie github.<br> Na razie w repozytorium jest <a href="https://github.com/pawel7/approximations/">pierwotna wersja skryptu</a>.</p>
+<p>Mam też mały skrypt na <a href="https://github.com/pawel7/calendar/">kalendarz na dowolny rok ze zdjęciami</a>. 
+<br>Wszelkie uwagi chętnie przyjmę.</p>
+<p>Ta praca ma charakter amatorski i eksperymentalny. 
+Cieszyłbym się, gdyby się przyczyniła do spopularyzowania ułamków łańcuchowych.
+</p>

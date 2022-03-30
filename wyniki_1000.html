@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Approximations of numbers</title>
+  <style media="screen" type="text/css">
+	body { background-color:#a0c0b0; margin: 0 auto; width:1260px;  text-align: center;}
+	.nagl { background-color: #E0D8D0; color:#012;}
+	.odd  { background-color: #C0f0D0;}
+	.even { background-color: #C0D0f0;}
+	.lepsze { font-weight:bold; color: #063;}
+	.odd:hover, .even:hover  { background-color: #A0E0C0;}
+	a { margin: 8px; }
+	label { text-align: right; display: inline-block; width: 250px; }
+  </style>
+</head>
+<body>
+<a href="pomoc.html">Pomoc</a>
+<h1>Przybliżenia liczb algebraicznych i przestępnych</h1>
+<p>Coraz to lepsze przybliżenia liczb za pomocą ułamków o mianownikach będących kolejnymi liczbami naturalnymi. <br> Lepsze <span class="lepsze"> &#10004;</span> oznacza przybliżenie co najmniej 2 razy lepsze </p>
+<pre>
+<h3>Przybliżenia liczby Złoty podział, &phi; = ( 1 + &radic;<span style="text-decoration:overline;">5</span> ) / 2 = 1.6180339887499</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1         3 /         2         1   1.500000000000  +0.118033988750     -3.2361     +0.472       +0.944     &#10004;     </span>
+<span class="even lepsze">  2         5 /         3         1   1.666666666667  -0.048632677917     -2.4271     -0.438       -1.313     &#10004;     </span>
+<span class="odd lepsze">  3         8 /         5         2   1.600000000000  +0.018033988750     -2.6967     +0.451       +2.254     &#10004;     </span>
+<span class="even lepsze">  4        13 /         8         3   1.625000000000  -0.006966011250     -2.5889     -0.446       -3.567     &#10004;     </span>
+<span class="odd lepsze">  5        21 /        13         5   1.615384615385  +0.002649373365     -2.6293     +0.448       +5.821     &#10004;     </span>
+<span class="even lepsze">  6        34 /        21         8   1.619047619048  -0.001013630298     -2.6137     -0.447       -9.387     &#10004;     </span>
+<span class="odd lepsze">  7        55 /        34        13   1.617647058824  +0.000386929926     -2.6197     +0.447      +15.208     &#10004;     </span>
+<span class="even lepsze">  8        89 /        55        21   1.618181818182  -0.000147829432     -2.6174     -0.447      -24.595     &#10004;     </span>
+<span class="odd lepsze">  9       144 /        89        34   1.617977528090  +0.000056460660     -2.6183     +0.447      +39.803     &#10004;     </span>
+<span class="even lepsze"> 10       233 /       144        55   1.618055555556  -0.000021566806     -2.6179     -0.447      -64.398     &#10004;     </span>
+<span class="odd lepsze"> 11       377 /       233        89   1.618025751073  +0.000008237677     -2.6181     +0.447     +104.201     &#10004;     </span>
+<span class="even lepsze"> 12       610 /       377       144   1.618037135279  -0.000003146529     -2.6180     -0.447     -168.599     &#10004;     </span>
+<span class="odd lepsze"> 13       987 /       610       233   1.618032786885  +0.000001201865     -2.6180     +0.447     +272.800     &#10004;     </span>
+<span class="even lepsze"> 14      1597 /       987       377   1.618034447822  -0.000000459072     -2.6180     -0.447     -441.400     &#10004;     </span>
+<p>( 14 / 14 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Przybliżenia liczby 2<sup>1/2</sup> = 1.4142135623731</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1         3 /         2         1   1.500000000000  -0.085786437627     -4.8284     -0.343       -0.686     &#10004;     </span>
+<span class="even">  2         4 /         3         1   1.333333333333  +0.080880229040     -1.0607     +0.728       +2.184           </span>
+<span class="odd lepsze">  3         7 /         5         2   1.400000000000  +0.014213562373     +5.6904     +0.355       +1.777     &#10004;     </span>
+<span class="even lepsze">  4        17 /        12         7   1.416666666667  -0.002453104294     -5.7941     -0.353       -4.239     &#10004;     </span>
+<span class="odd">  5        24 /        17         5   1.411764705882  +0.002448856491     -1.0017     +0.708      +12.031           </span>
+<span class="even lepsze">  6        41 /        29        12   1.413793103448  +0.000420458925     +5.8242     +0.354      +10.255     &#10004;     </span>
+<span class="odd lepsze">  7        99 /        70        41   1.414285714286  -0.000072151913     -5.8274     -0.354      -24.748     &#10004;     </span>
+<span class="even">  8       140 /        99        29   1.414141414141  +0.000072148232     -1.0001     +0.707      +70.005           </span>
+<span class="odd lepsze">  9       239 /       169        70   1.414201183432  +0.000012378941     +5.8283     +0.354      +59.751     &#10004;     </span>
+<span class="even lepsze"> 10       577 /       408       239   1.414215686275  -0.000002123901     -5.8284     -0.354     -144.250     &#10004;     </span>
+<span class="odd"> 11       816 /       577       169   1.414211438475  +0.000002123898     -1.0000     +0.707     +408.001           </span>
+<span class="even lepsze"> 12      1393 /       985       408   1.414213197970  +0.000000364404     +5.8284     +0.354     +348.250     &#10004;     </span>
+<p>( 8 / 12 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby 2<sup>1/2</sup> = 1.4142135623731</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1         3 /         2         0   1.500000000000  -0.085786437627     -4.8284     -0.343       -0.686     &#10004;     </span>
+<span class="even lepsze">  2         7 /         5         0   1.400000000000  +0.014213562373     +5.6904     +0.355       +1.777     &#10004;     </span>
+<span class="odd lepsze">  3        17 /        12         0   1.416666666667  -0.002453104294     -5.7941     -0.353       -4.239     &#10004;     </span>
+<span class="even lepsze">  4        41 /        29         0   1.413793103448  +0.000420458925     +5.8242     +0.354      +10.255     &#10004;     </span>
+<span class="odd lepsze">  5        99 /        70         0   1.414285714286  -0.000072151913     -5.8274     -0.354      -24.748     &#10004;     </span>
+<span class="even lepsze">  6       239 /       169         0   1.414201183432  +0.000012378941     +5.8283     +0.354      +59.751     &#10004;     </span>
+<span class="odd lepsze">  7       577 /       408         0   1.414215686275  -0.000002123901     -5.8284     -0.354     -144.250     &#10004;     </span>
+<span class="even lepsze">  8      1393 /       985         0   1.414213197970  +0.000000364404     +5.8284     +0.354     +348.250     &#10004;     </span>
+<h3>Przybliżenia liczby 3<sup>1/2</sup>-2<sup>1/2</sup> = 0.31783724519578</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1         1 /         2         1   0.500000000000  -0.182162754804     -1.7448     -0.729       -1.457           </span>
+<span class="even lepsze">  2         1 /         3         1   0.333333333333  -0.015496088138    +11.7554     -0.139       -0.418     &#10004;     </span>
+<span class="odd">  3         4 /        13        10   0.307692307692  +0.010144937503     -1.5275     +1.714      +22.288           </span>
+<span class="even">  4         5 /        16         3   0.312500000000  +0.005337245196     +1.9008     +1.366      +21.861           </span>
+<span class="odd lepsze">  5         6 /        19         3   0.315789473684  +0.002047771512     +2.6064     +0.739      +14.046     &#10004;     </span>
+<span class="even lepsze">  6         7 /        22         3   0.318181818182  -0.000344572986     -5.9429     -0.167       -3.669     &#10004;     </span>
+<span class="odd">  7        27 /        85        63   0.317647058824  +0.000190186372     -1.8118     +1.374     +116.798           </span>
+<span class="even lepsze">  8        34 /       107        22   0.317757009346  +0.000080235850     +2.3703     +0.919      +98.292     &#10004;     </span>
+<span class="odd lepsze">  9        41 /       129        22   0.317829457364  +0.000007787831    +10.3027     +0.130      +16.718     &#10004;     </span>
+<span class="even"> 10       171 /       538       409   0.317843866171  -0.000006620975     -1.1762     -1.916    -1031.024           </span>
+<span class="odd"> 11       212 /       667       129   0.317841079460  -0.000003834264     +1.7268     -1.706    -1137.783           </span>
+<span class="even"> 12       253 /       796       129   0.317839195980  -0.000001950784     +1.9655     -1.236     -983.894           </span>
+<span class="odd lepsze"> 13       294 /       925       129   0.317837837838  -0.000000592642     +3.2917     -0.507     -469.048     &#10004;     </span>
+<p>( 6 / 13 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby 3<sup>1/2</sup>-2<sup>1/2</sup> = 0.31783724519578</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1         1 /         3         0   0.333333333333  -0.015496088138    +11.7554     -0.139       -0.418     &#10004;     </span>
+<span class="even lepsze">  2         6 /        19         0   0.315789473684  +0.002047771512     +2.6064     +0.739      +14.046     &#10004;     </span>
+<span class="odd lepsze">  3         7 /        22         0   0.318181818182  -0.000344572986     -5.9429     -0.167       -3.669     &#10004;     </span>
+<span class="even lepsze">  4        34 /       107         0   0.317757009346  +0.000080235850     +2.3703     +0.919      +98.292     &#10004;     </span>
+<span class="odd lepsze">  5        41 /       129         0   0.317829457364  +0.000007787831    +10.3027     +0.130      +16.718     &#10004;     </span>
+<span class="even lepsze">  6       294 /       925         0   0.317837837838  -0.000000592642     +3.2917     -0.507     -469.048     &#10004;     </span>
+<h3>Przybliżenia liczby 5<sup>1/2</sup>-3<sup>1/2</sup>+2<sup>1/2</sup> = 1.918230732304</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1         4 /         2         1   2.000000000000  -0.081769267696     +1.0000     -0.327       -0.654           </span>
+<span class="even">  2        13 /         7         5   1.857142857143  +0.061087875161     -1.3386     +2.993      +20.953           </span>
+<span class="odd">  3        15 /         8         1   1.875000000000  +0.043230732304     +1.4131     +2.767      +22.134           </span>
+<span class="even">  4        17 /         9         1   1.888888888889  +0.029341843415     +1.4733     +2.377      +21.390           </span>
+<span class="odd">  5        19 /        10         1   1.900000000000  +0.018230732304     +1.6095     +1.823      +18.231           </span>
+<span class="even">  6        21 /        11         1   1.909090909091  +0.009139823213     +1.9946     +1.106      +12.165           </span>
+<span class="odd lepsze">  7        23 /        12         1   1.916666666667  +0.001564065637     +5.8436     +0.225       +2.703     &#10004;     </span>
+<span class="even lepsze">  8        71 /        37        25   1.918918918919  -0.000688186615     -2.2727     -0.942      -34.859     &#10004;     </span>
+<span class="odd lepsze">  9        94 /        49        12   1.918367346939  -0.000136614635     +5.0374     -0.328      -16.073     &#10004;     </span>
+<span class="even lepsze"> 10       211 /       110        61   1.918181818182  +0.000048914122     -2.7929     +0.592      +65.105     &#10004;     </span>
+<span class="odd lepsze"> 11       305 /       159        49   1.918238993711  -0.000008261407     -5.9208     -0.209      -33.208     &#10004;     </span>
+<span class="even"> 12       821 /       428       269   1.918224299065  +0.000006433239     -1.2842     +1.178     +504.384           </span>
+<span class="odd lepsze"> 13      1126 /       587       159   1.918228279387  +0.000002452917     +2.6227     +0.845     +496.132     &#10004;     </span>
+<span class="even lepsze"> 14      1431 /       746       159   1.918230563003  +0.000000169301    +14.4885     +0.094      +70.287     &#10004;     </span>
+<p>( 7 / 14 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby 5<sup>1/2</sup>-3<sup>1/2</sup>+2<sup>1/2</sup> = 1.918230732304</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1        23 /        12         0   1.916666666667  +0.001564065637     +5.8436     +0.225       +2.703     &#10004;     </span>
+<span class="even lepsze">  2        71 /        37         0   1.918918918919  -0.000688186615     -2.2727     -0.942      -34.859     &#10004;     </span>
+<span class="odd lepsze">  3        94 /        49         0   1.918367346939  -0.000136614635     +5.0374     -0.328      -16.073     &#10004;     </span>
+<span class="even lepsze">  4       211 /       110         0   1.918181818182  +0.000048914122     -2.7929     +0.592      +65.105     &#10004;     </span>
+<span class="odd lepsze">  5       305 /       159         0   1.918238993711  -0.000008261407     -5.9208     -0.209      -33.208     &#10004;     </span>
+<span class="even lepsze">  6      1126 /       587         0   1.918228279387  +0.000002452917     +2.6227     +0.845     +496.132     &#10004;     </span>
+<span class="odd lepsze">  7      1431 /       746         0   1.918230563003  +0.000000169301    +14.4885     +0.094      +70.287     &#10004;     </span>
+<h3>Przybliżenia liczby 2<sup>1/3</sup> = 1.2599210498949</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1         3 /         2         1   1.500000000000  -0.240078950105     -1.0826     -0.960       -1.921           </span>
+<span class="even lepsze">  2         4 /         3         1   1.333333333333  -0.073412283438     +3.2703     -0.661       -1.982     &#10004;     </span>
+<span class="odd lepsze">  3         5 /         4         1   1.250000000000  +0.009921049895     -7.3996     +0.159       +0.635     &#10004;     </span>
+<span class="even">  4        19 /        15        11   1.266666666667  -0.006745616772     -1.4707     -1.518      -22.766           </span>
+<span class="odd lepsze">  5        24 /        19         4   1.263157894737  -0.003236844842     +2.0840     -1.169      -22.202     &#10004;     </span>
+<span class="even lepsze">  6        29 /        23         4   1.260869565217  -0.000948515323     +3.4125     -0.502      -11.541     &#10004;     </span>
+<span class="odd">  7        34 /        27         4   1.259259259259  +0.000661790636     -1.4333     +0.482      +13.026           </span>
+<span class="even lepsze">  8        63 /        50        23   1.260000000000  -0.000078950105     -8.3824     -0.197       -9.869     &#10004;     </span>
+<span class="odd">  9       160 /       127        77   1.259842519685  +0.000078530210     -1.0053     +1.267     +160.860           </span>
+<span class="even lepsze"> 10       223 /       177        50   1.259887005650  +0.000034044245     +2.3067     +1.067     +188.783     &#10004;     </span>
+<span class="odd lepsze"> 11       286 /       227        50   1.259911894273  +0.000009155622     +3.7184     +0.472     +107.094     &#10004;     </span>
+<span class="even"> 12       349 /       277        50   1.259927797834  -0.000006747939     -1.3568     -0.518     -143.420           </span>
+<span class="odd lepsze"> 13       635 /       504       227   1.259920634921  +0.000000414974    -16.2611     +0.105      +53.127     &#10004;     </span>
+<p>( 8 / 13 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby 2<sup>1/3</sup> = 1.2599210498949</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1         4 /         3         0   1.333333333333  -0.073412283438     +3.2703     -0.661       -1.982     &#10004;     </span>
+<span class="even lepsze">  2         5 /         4         0   1.250000000000  +0.009921049895     -7.3996     +0.159       +0.635     &#10004;     </span>
+<span class="odd lepsze">  3        24 /        19         0   1.263157894737  -0.003236844842     +2.0840     -1.169      -22.202     &#10004;     </span>
+<span class="even lepsze">  4        29 /        23         0   1.260869565217  -0.000948515323     +3.4125     -0.502      -11.541     &#10004;     </span>
+<span class="odd lepsze">  5        63 /        50         0   1.260000000000  -0.000078950105     -8.3824     -0.197       -9.869     &#10004;     </span>
+<span class="even lepsze">  6       223 /       177         0   1.259887005650  +0.000034044245     +2.3067     +1.067     +188.783     &#10004;     </span>
+<span class="odd lepsze">  7       286 /       227         0   1.259911894273  +0.000009155622     +3.7184     +0.472     +107.094     &#10004;     </span>
+<span class="even lepsze">  8       635 /       504         0   1.259920634921  +0.000000414974    -16.2611     +0.105      +53.127     &#10004;     </span>
+<h3>Przybliżenia liczby 2<sup>1/4</sup> = 1.1892071150027</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1         2 /         2         1   1.000000000000  +0.189207115003     +1.0000     +0.757       +1.514           </span>
+<span class="even">  2         4 /         3         1   1.333333333333  -0.144126218331     -1.3128     -1.297       -3.891           </span>
+<span class="odd lepsze">  3         5 /         4         1   1.250000000000  -0.060792884997     +2.3708     -0.973       -3.891     &#10004;     </span>
+<span class="even lepsze">  4         6 /         5         1   1.200000000000  -0.010792884997     +5.6327     -0.270       -1.349     &#10004;     </span>
+<span class="odd">  5        13 /        11         6   1.181818181818  +0.007388933185     -1.4607     +0.894       +9.835           </span>
+<span class="even lepsze">  6        19 /        16         5   1.187500000000  +0.001707115003     +4.3283     +0.437       +6.992     &#10004;     </span>
+<span class="odd">  7        25 /        21         5   1.190476190476  -0.001269075473     -1.3452     -0.560      -11.753           </span>
+<span class="even lepsze">  8        44 /        37        16   1.189189189189  +0.000017925814    -70.7960     +0.025       +0.908     &#10004;     </span>
+<span class="odd">  9       905 /       761       724   1.189224704336  -0.000017589334     -1.0191    -10.186    -7751.814           </span>
+<span class="even"> 10       949 /       798        37   1.189223057644  -0.000015942641     +1.1033    -10.152    -8101.566           </span>
+<span class="odd"> 11       993 /       835        37   1.189221556886  -0.000014441884     +1.1039    -10.069    -8407.817           </span>
+<span class="even"> 12      1037 /       872        37   1.189220183486  -0.000013068484     +1.1051     -9.937    -8665.121           </span>
+<span class="odd"> 13      1081 /       909        37   1.189218921892  -0.000011806889     +1.1069     -9.756    -8868.030           </span>
+<span class="even"> 14      1125 /       946        37   1.189217758985  -0.000010643982     +1.1093     -9.525    -9011.095           </span>
+<span class="odd"> 15      1169 /       983        37   1.189216683622  -0.000009568619     +1.1124     -9.246    -9088.868           </span>
+<p>( 4 / 15 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby 2<sup>1/4</sup> = 1.1892071150027</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1         5 /         4         0   1.250000000000  -0.060792884997     +2.3708     -0.973       -3.891     &#10004;     </span>
+<span class="even lepsze">  2         6 /         5         0   1.200000000000  -0.010792884997     +5.6327     -0.270       -1.349     &#10004;     </span>
+<span class="odd lepsze">  3        19 /        16         0   1.187500000000  +0.001707115003     +4.3283     +0.437       +6.992     &#10004;     </span>
+<span class="even lepsze">  4        44 /        37         0   1.189189189189  +0.000017925814    -70.7960     +0.025       +0.908     &#10004;     </span>
+<h3>Przybliżenia liczby 2<sup>1/5</sup> = 1.148698354997</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1         2 /         2         1   1.000000000000  +0.148698354997     +1.0000     +0.595       +1.190           </span>
+<span class="even">  2         5 /         4         2   1.250000000000  -0.101301645003     -1.4679     -1.621       -6.483           </span>
+<span class="odd">  3         6 /         5         1   1.200000000000  -0.051301645003     +1.9746     -1.283       -6.413           </span>
+<span class="even lepsze">  4         7 /         6         1   1.166666666667  -0.017968311670     +2.8551     -0.647       -3.881     &#10004;     </span>
+<span class="odd lepsze">  5         8 /         7         1   1.142857142857  +0.005841212140     -3.0761     +0.286       +2.004     &#10004;     </span>
+<span class="even">  6        15 /        13         6   1.153846153846  -0.005147798849     -1.1347     -0.870      -11.310           </span>
+<span class="odd lepsze">  7        23 /        20         7   1.150000000000  -0.001301645003     +3.9548     -0.521      -10.413     &#10004;     </span>
+<span class="even lepsze">  8        31 /        27         7   1.148148148148  +0.000550206849     -2.3657     +0.401      +10.830     &#10004;     </span>
+<span class="odd lepsze">  9        54 /        47        20   1.148936170213  -0.000237815216     -2.3136     -0.525      -24.691     &#10004;     </span>
+<span class="even lepsze"> 10        85 /        74        27   1.148648648649  +0.000049706348     -4.7844     +0.272      +20.142     &#10004;     </span>
+<span class="odd lepsze"> 11       224 /       195       121   1.148717948718  -0.000019593721     -2.5369     -0.745     -145.285     &#10004;     </span>
+<span class="even lepsze"> 12       309 /       269        74   1.148698884758  -0.000000529761    +36.9859     -0.038      -10.312     &#10004;     </span>
+<p>( 8 / 12 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby 2<sup>1/5</sup> = 1.148698354997</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1         7 /         6         0   1.166666666667  -0.017968311670     +2.8551     -0.647       -3.881     &#10004;     </span>
+<span class="even lepsze">  2         8 /         7         0   1.142857142857  +0.005841212140     -3.0761     +0.286       +2.004     &#10004;     </span>
+<span class="odd lepsze">  3        23 /        20         0   1.150000000000  -0.001301645003     +3.9548     -0.521      -10.413     &#10004;     </span>
+<span class="even lepsze">  4        31 /        27         0   1.148148148148  +0.000550206849     -2.3657     +0.401      +10.830     &#10004;     </span>
+<span class="odd lepsze">  5        54 /        47         0   1.148936170213  -0.000237815216     -2.3136     -0.525      -24.691     &#10004;     </span>
+<span class="even lepsze">  6        85 /        74         0   1.148648648649  +0.000049706348     -4.7844     +0.272      +20.142     &#10004;     </span>
+<span class="odd lepsze">  7       224 /       195         0   1.148717948718  -0.000019593721     -2.5369     -0.745     -145.285     &#10004;     </span>
+<span class="even lepsze">  8       309 /       269         0   1.148698884758  -0.000000529761    +36.9859     -0.038      -10.312     &#10004;     </span>
+<h3>Przybliżenia liczby characteristic impedance of vacuum (Z0) = 376.730313461</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1       753 /         2         1 376.500000000000  +0.230313461000     -1.1710     +0.921       +1.843           </span>
+<span class="even lepsze">  2      1130 /         3         1 376.666666666667  +0.063646794333     +3.6186     +0.573       +1.718     &#10004;     </span>
+<span class="odd lepsze">  3      1507 /         4         1 376.750000000000  -0.019686539000     -3.2330     -0.315       -1.260     &#10004;     </span>
+<span class="even">  4      2637 /         7         3 376.714285714286  +0.016027746714     -1.2283     +0.785       +5.498           </span>
+<span class="odd lepsze">  5      4144 /        11         4 376.727272727273  +0.003040733727     +5.2710     +0.368       +4.047     &#10004;     </span>
+<span class="even">  6      5651 /        15         4 376.733333333333  -0.003019872333     -1.0069     -0.679      -10.192           </span>
+<span class="odd lepsze">  7      9795 /        26        11 376.730769230769  -0.000455769769     +6.6259     -0.308       -8.011     &#10004;     </span>
+<span class="even lepsze">  8     23734 /        63        37 376.730158730159  +0.000154730841     -2.9456     +0.614      +38.690     &#10004;     </span>
+<span class="odd lepsze">  9     33529 /        89        26 376.730337078652  -0.000023617652     -6.5515     -0.187      -16.650     &#10004;     </span>
+<span class="even"> 10     90792 /       241       152 376.730290456432  +0.000023004568     -1.0267     +1.336     +322.007           </span>
+<span class="odd lepsze"> 11    124321 /       330        89 376.730303030303  +0.000010430697     +2.2055     +1.136     +374.848     &#10004;     </span>
+<span class="even lepsze"> 12    157850 /       419        89 376.730310262530  +0.000003198470     +3.2612     +0.562     +235.280     &#10004;     </span>
+<span class="odd lepsze"> 13    191379 /       508        89 376.730314960630  -0.000001499630     -2.1328     -0.387     -196.596     &#10004;     </span>
+<span class="even lepsze"> 14    349229 /       927       419 376.730312837109  +0.000000623891     -2.4037     +0.536     +496.990     &#10004;     </span>
+<p>( 10 / 14 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Przybliżenia liczby proton g factor = 5.585694713</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1        11 /         2         1   5.500000000000  +0.085694713000     -4.8347     +0.343       +0.686     &#10004;     </span>
+<span class="even">  2        17 /         3         1   5.666666666667  -0.080971953667     -1.0583     -0.729       -2.186           </span>
+<span class="odd lepsze">  3        28 /         5         2   5.600000000000  -0.014305287000     +5.6603     -0.358       -1.788     &#10004;     </span>
+<span class="even">  4        39 /         7         2   5.571428571429  +0.014266141571     -1.0027     +0.699       +4.893           </span>
+<span class="odd lepsze">  5        67 /        12         5   5.583333333333  +0.002361379667     +6.0414     +0.340       +4.080     &#10004;     </span>
+<span class="even lepsze">  6       162 /        29        17   5.586206896552  -0.000512183552     -4.6104     -0.431      -12.492     &#10004;     </span>
+<span class="odd">  7       229 /        41        12   5.585365853659  +0.000328859341     -1.5575     +0.553      +22.665           </span>
+<span class="even lepsze">  8       391 /        70        29   5.585714285714  -0.000019572714    -16.8019     -0.096       -6.713     &#10004;     </span>
+<span class="odd">  9      2184 /       391       321   5.585677749361  +0.000016963639     -1.1538     +2.593    +1014.026           </span>
+<span class="even"> 10      2575 /       461        70   5.585683297180  +0.000011415820     +1.4860     +2.426    +1118.433           </span>
+<span class="odd"> 11      2966 /       531        70   5.585687382298  +0.000007330702     +1.5573     +2.067    +1097.562           </span>
+<span class="even"> 12      3357 /       601        70   5.585690515807  +0.000004197193     +1.7466     +1.516     +911.134           </span>
+<span class="odd lepsze"> 13      3748 /       671        70   5.585692995529  +0.000001717471     +2.4438     +0.773     +518.868     &#10004;     </span>
+<span class="even lepsze"> 14      4139 /       741        70   5.585695006748  -0.000000293748     -5.8468     -0.161     -119.517     &#10004;     </span>
+<p>( 7 / 14 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby proton g factor = 5.585694713</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1        11 /         2         0   5.500000000000  +0.085694713000     -4.8347     +0.343       +0.686     &#10004;     </span>
+<span class="even lepsze">  2        28 /         5         0   5.600000000000  -0.014305287000     +5.6603     -0.358       -1.788     &#10004;     </span>
+<span class="odd lepsze">  3        67 /        12         0   5.583333333333  +0.002361379667     +6.0414     +0.340       +4.080     &#10004;     </span>
+<span class="even lepsze">  4       162 /        29         0   5.586206896552  -0.000512183552     -4.6104     -0.431      -12.492     &#10004;     </span>
+<span class="odd lepsze">  5       391 /        70         0   5.585714285714  -0.000019572714    -16.8019     -0.096       -6.713     &#10004;     </span>
+<span class="even lepsze">  6      3748 /       671         0   5.585692995529  +0.000001717471     +2.4438     +0.773     +518.868     &#10004;     </span>
+<span class="odd lepsze">  7      4139 /       741         0   5.585695006748  -0.000000293748     -5.8468     -0.161     -119.517     &#10004;     </span>
+<h3>Przybliżenia liczby &pi; = 3.1415926535898, dokładniej = 3.141592653589793238462643383279502884197169</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1         6 /         2         1   3.000000000000  +0.141592653590     +1.0000     +0.566       +1.133           </span>
+<span class="even">  2        13 /         4         2   3.250000000000  -0.108407346410     -1.3061     -1.735       -6.938           </span>
+<span class="odd">  3        16 /         5         1   3.200000000000  -0.058407346410     +1.8561     -1.460       -7.301           </span>
+<span class="even lepsze">  4        19 /         6         1   3.166666666667  -0.025074013077     +2.3294     -0.903       -5.416     &#10004;     </span>
+<span class="odd lepsze">  5        22 /         7         1   3.142857142857  -0.001264489267    +19.8294     -0.062       -0.434     &#10004;     </span>
+<span class="even">  6       179 /        57        50   3.140350877193  +0.001241776397     -1.0183     +4.035     +229.968           </span>
+<span class="odd">  7       201 /        64         7   3.140625000000  +0.000967653590     +1.2833     +3.964     +253.665           </span>
+<span class="even">  8       223 /        71         7   3.140845070423  +0.000747583167     +1.2944     +3.769     +267.568           </span>
+<span class="odd">  9       245 /        78         7   3.141025641026  +0.000567012564     +1.3185     +3.450     +269.077           </span>
+<span class="even"> 10       267 /        85         7   3.141176470588  +0.000416183002     +1.3624     +3.007     +255.588           </span>
+<span class="odd"> 11       289 /        92         7   3.141304347826  +0.000288305764     +1.4435     +2.440     +224.500           </span>
+<span class="even"> 12       311 /        99         7   3.141414141414  +0.000178512176     +1.6150     +1.750     +173.210           </span>
+<span class="odd lepsze"> 13       333 /       106         7   3.141509433962  +0.000083219628     +2.1451     +0.935      +99.116     &#10004;     </span>
+<span class="even lepsze"> 14       355 /       113         7   3.141592920354  -0.000000266764   -311.9595     -0.003       -0.385     &#10004;     </span>
+<p>( 4 / 14 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby &pi; = 3.1415926535898</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1        19 /         6         0   3.166666666667  -0.025074013077     +2.3294     -0.903       -5.416     &#10004;     </span>
+<span class="even lepsze">  2        22 /         7         0   3.142857142857  -0.001264489267    +19.8294     -0.062       -0.434     &#10004;     </span>
+<span class="odd lepsze">  3       333 /       106         0   3.141509433962  +0.000083219628     +2.1451     +0.935      +99.116     &#10004;     </span>
+<span class="even lepsze">  4       355 /       113         0   3.141592920354  -0.000000266764   -311.9595     -0.003       -0.385     &#10004;     </span>
+<h3>Przybliżenia liczby e = 2.718281828459, dokładniej = 2.71828182845904523536028747135266249775724709369995</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1         5 /         2         1   2.500000000000  +0.218281828459     -1.2906     +0.873       +1.746           </span>
+<span class="even lepsze">  2         8 /         3         1   2.666666666667  +0.051615161792     +4.2290     +0.465       +1.394     &#10004;     </span>
+<span class="odd">  3        11 /         4         1   2.750000000000  -0.031718171541     -1.6273     -0.507       -2.030           </span>
+<span class="even lepsze">  4        19 /         7         3   2.714285714286  +0.003996114173     -7.9373     +0.196       +1.371     &#10004;     </span>
+<span class="odd">  5        49 /        18        11   2.722222222222  -0.003940393763     -1.0141     -1.277      -22.980           </span>
+<span class="even lepsze">  6        68 /        25         7   2.720000000000  -0.001718171541     +2.2934     -1.074      -26.846     &#10004;     </span>
+<span class="odd lepsze">  7        87 /        32         7   2.718750000000  -0.000468171541     +3.6700     -0.479      -15.341     &#10004;     </span>
+<span class="even">  8       106 /        39         7   2.717948717949  +0.000333110510     -1.4055     +0.507      +19.760           </span>
+<span class="odd lepsze">  9       193 /        71        32   2.718309859155  -0.000028030696    -11.8838     -0.141      -10.032     &#10004;     </span>
+<span class="even"> 10       685 /       252       181   2.718253968254  +0.000027860205     -1.0061     +1.769     +445.847           </span>
+<span class="odd"> 11       878 /       323        71   2.718266253870  +0.000015574589     +1.7888     +1.625     +524.837           </span>
+<span class="even lepsze"> 12      1071 /       394        71   2.718274111675  +0.000007716784     +2.0183     +1.198     +471.982     &#10004;     </span>
+<span class="odd lepsze"> 13      1264 /       465        71   2.718279569892  +0.000002258567     +3.4167     +0.488     +227.087     &#10004;     </span>
+<span class="even"> 14      1457 /       536        71   2.718283582090  -0.000001753631     -1.2879     -0.504     -270.043           </span>
+<p>( 7 / 14 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby e = 2.718281828459</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1         8 /         3         0   2.666666666667  +0.051615161792     +4.2290     +0.465       +1.394     &#10004;     </span>
+<span class="even lepsze">  2        19 /         7         0   2.714285714286  +0.003996114173     -7.9373     +0.196       +1.371     &#10004;     </span>
+<span class="odd lepsze">  3        68 /        25         0   2.720000000000  -0.001718171541     +2.2934     -1.074      -26.846     &#10004;     </span>
+<span class="even lepsze">  4        87 /        32         0   2.718750000000  -0.000468171541     +3.6700     -0.479      -15.341     &#10004;     </span>
+<span class="odd lepsze">  5       193 /        71         0   2.718309859155  -0.000028030696    -11.8838     -0.141      -10.032     &#10004;     </span>
+<span class="even lepsze">  6      1071 /       394         0   2.718274111675  +0.000007716784     +2.0183     +1.198     +471.982     &#10004;     </span>
+<span class="odd lepsze">  7      1264 /       465         0   2.718279569892  +0.000002258567     +3.4167     +0.488     +227.087     &#10004;     </span>
+<h3>Przybliżenia liczby e<sup>&pi;</sup> = 23.140692632779</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1        46 /         2         1  23.000000000000  +0.140692632779     +1.0000     +0.563       +1.126           </span>
+<span class="even">  2        93 /         4         2  23.250000000000  -0.109307367221     -1.2871     -1.749       -6.996           </span>
+<span class="odd">  3       116 /         5         1  23.200000000000  -0.059307367221     +1.8431     -1.483       -7.413           </span>
+<span class="even lepsze">  4       139 /         6         1  23.166666666667  -0.025974033887     +2.2833     -0.935       -5.610     &#10004;     </span>
+<span class="odd lepsze">  5       162 /         7         1  23.142857142857  -0.002164510078    +12.0000     -0.106       -0.742     &#10004;     </span>
+<span class="even">  6       833 /        36        29  23.138888888889  +0.001803743890     -1.2000     +2.338      +84.155           </span>
+<span class="odd">  7       995 /        43         7  23.139534883721  +0.001157749058     +1.5580     +2.141      +92.049           </span>
+<span class="even">  8      1157 /        50         7  23.140000000000  +0.000692632779     +1.6715     +1.732      +86.579           </span>
+<span class="odd lepsze">  9      1319 /        57         7  23.140350877193  +0.000341755586     +2.0267     +1.110      +63.291     &#10004;     </span>
+<span class="even lepsze"> 10      1481 /        64         7  23.140625000000  +0.000067632779     +5.0531     +0.277      +17.730     &#10004;     </span>
+<span class="odd"> 11      3124 /       135        71  23.140740740741  -0.000048107961     -1.4059     -0.877     -118.364           </span>
+<span class="even lepsze"> 12      4605 /       199        64  23.140703517588  -0.000010884809     +4.4197     -0.431      -85.779     &#10004;     </span>
+<span class="odd"> 13      6086 /       263        64  23.140684410646  +0.000008222133     -1.3238     +0.569     +149.572           </span>
+<span class="even lepsze"> 14     10691 /       462       199  23.140692640693  -0.000000007913  -1039.0163     -0.002       -0.780     &#10004;     </span>
+<p>( 6 / 14 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby e<sup>&pi;</sup> = 23.140692632779</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1       139 /         6         0  23.166666666667  -0.025974033887     +2.2833     -0.935       -5.610     &#10004;     </span>
+<span class="even lepsze">  2       162 /         7         0  23.142857142857  -0.002164510078    +12.0000     -0.106       -0.742     &#10004;     </span>
+<span class="odd lepsze">  3      1319 /        57         0  23.140350877193  +0.000341755586     +2.0267     +1.110      +63.291     &#10004;     </span>
+<span class="even lepsze">  4      1481 /        64         0  23.140625000000  +0.000067632779     +5.0531     +0.277      +17.730     &#10004;     </span>
+<span class="odd lepsze">  5      4605 /       199         0  23.140703517588  -0.000010884809     +4.4197     -0.431      -85.779     &#10004;     </span>
+<span class="even lepsze">  6     10691 /       462         0  23.140692640693  -0.000000007913  -1039.0163     -0.002       -0.780     &#10004;     </span>
+<h3>Przybliżenia liczby &pi;<sup>e</sup> = 22.459157718361</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1        45 /         2         1  22.500000000000  -0.040842281639    -11.2422     -0.163       -0.327     &#10004;     </span>
+<span class="even">  2       157 /         7         5  22.428571428571  +0.030586289790     -1.3353     +1.499      +10.491           </span>
+<span class="odd lepsze">  3       202 /         9         2  22.444444444444  +0.014713273917     +2.0788     +1.192      +10.726     &#10004;     </span>
+<span class="even lepsze">  4       247 /        11         2  22.454545454545  +0.004612263816     +3.1900     +0.558       +6.139     &#10004;     </span>
+<span class="odd">  5       292 /        13         2  22.461538461538  -0.002380743177     -1.9373     -0.402       -5.230           </span>
+<span class="even lepsze">  6       539 /        24        11  22.458333333333  +0.000824385028     -2.8879     +0.475      +11.396     &#10004;     </span>
+<span class="odd lepsze">  7       831 /        37        13  22.459459459459  -0.000301741098     -2.7321     -0.413      -15.284     &#10004;     </span>
+<span class="even lepsze">  8      1370 /        61        24  22.459016393443  +0.000141324918     -2.1351     +0.526      +32.078     &#10004;     </span>
+<span class="odd lepsze">  9      2201 /        98        37  22.459183673469  -0.000025955108     -5.4450     -0.249      -24.429     &#10004;     </span>
+<span class="even"> 10      5772 /       257       159  22.459143968872  +0.000013749489     -1.8877     +0.908     +233.392           </span>
+<span class="odd lepsze"> 11      7973 /       355        98  22.459154929577  +0.000002788784     +4.9303     +0.351     +124.767     &#10004;     </span>
+<span class="even lepsze"> 12     18147 /       808       453  22.459158415842  -0.000000697481     -3.9984     -0.455     -367.931     &#10004;     </span>
+<p>( 9 / 12 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Przybliżenia liczby alpha = 137.03599907444</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1       274 /         2         1 137.000000000000  +0.035999074440     +1.0000     +0.144       +0.288           </span>
+<span class="even">  2      1919 /        14        12 137.071428571429  -0.035429496989     -1.0161     -6.944      -97.219           </span>
+<span class="odd">  3      2056 /        15         1 137.066666666667  -0.030667592227     +1.1553     -6.900     -103.503           </span>
+<span class="even">  4      2193 /        16         1 137.062500000000  -0.026500925560     +1.1572     -6.784     -108.548           </span>
+<span class="odd">  5      2330 /        17         1 137.058823529412  -0.022824454972     +1.1611     -6.596     -112.137           </span>
+<span class="even">  6      2467 /        18         1 137.055555555556  -0.019556481116     +1.1671     -6.336     -114.053           </span>
+<span class="odd">  7      2604 /        19         1 137.052631578947  -0.016632504507     +1.1758     -6.004     -114.082           </span>
+<span class="even">  8      2741 /        20         1 137.050000000000  -0.014000925560     +1.1880     -5.600     -112.007           </span>
+<span class="odd">  9      2878 /        21         1 137.047619047619  -0.011619973179     +1.2049     -5.124     -107.613           </span>
+<span class="even"> 10      3015 /        22         1 137.045454545455  -0.009455471015     +1.2289     -4.576     -100.682           </span>
+<span class="odd"> 11      3152 /        23         1 137.043478260870  -0.007479186430     +1.2642     -3.956      -90.999           </span>
+<span class="even"> 12      3289 /        24         1 137.041666666667  -0.005667592227     +1.3196     -3.265      -78.349           </span>
+<span class="odd"> 13      3426 /        25         1 137.040000000000  -0.004000925560     +1.4166     -2.501      -62.514           </span>
+<span class="even"> 14      3563 /        26         1 137.038461538462  -0.002462464022     +1.6248     -1.665      -43.280           </span>
+<span class="odd lepsze"> 15      3700 /        27         1 137.037037037037  -0.001037962597     +2.3724     -0.757      -20.430     &#10004;     </span>
+<span class="even lepsze"> 16      3837 /        28         1 137.035714285714  +0.000284788726     -3.6447     +0.223       +6.252     &#10004;     </span>
+<span class="odd"> 17     11374 /        83        55 137.036144578313  -0.000145503873     -1.9573     -1.002      -83.197           </span>
+<span class="even lepsze"> 18     15211 /       111        28 137.036036036036  -0.000036961596     +3.9366     -0.455      -50.550     &#10004;     </span>
+<span class="odd"> 19     19048 /       139        28 137.035971223022  +0.000027851418     -1.3271     +0.538      +74.798           </span>
+<span class="even lepsze"> 20     34259 /       250       111 137.036000000000  -0.000000925560    -30.0914     -0.058      -14.462     &#10004;     </span>
+<p>( 4 / 20 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby alpha = 137.03599907444</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1      3700 /        27         0 137.037037037037  -0.001037962597     +2.3724     -0.757      -20.430     &#10004;     </span>
+<span class="even lepsze">  2      3837 /        28         0 137.035714285714  +0.000284788726     -3.6447     +0.223       +6.252     &#10004;     </span>
+<span class="odd lepsze">  3     15211 /       111         0 137.036036036036  -0.000036961596     +3.9366     -0.455      -50.550     &#10004;     </span>
+<span class="even lepsze">  4     34259 /       250         0 137.036000000000  -0.000000925560    -30.0914     -0.058      -14.462     &#10004;     </span>
+<h3>Przybliżenia liczby alpha1 = 137.03599903791</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd">  1       274 /         2         1 137.000000000000  +0.035999037910     +1.0000     +0.144       +0.288           </span>
+<span class="even">  2      1919 /        14        12 137.071428571429  -0.035429533519     -1.0161     -6.944      -97.219           </span>
+<span class="odd">  3      2056 /        15         1 137.066666666667  -0.030667628757     +1.1553     -6.900     -103.503           </span>
+<span class="even">  4      2193 /        16         1 137.062500000000  -0.026500962090     +1.1572     -6.784     -108.548           </span>
+<span class="odd">  5      2330 /        17         1 137.058823529412  -0.022824491502     +1.1611     -6.596     -112.137           </span>
+<span class="even">  6      2467 /        18         1 137.055555555556  -0.019556517646     +1.1671     -6.336     -114.054           </span>
+<span class="odd">  7      2604 /        19         1 137.052631578947  -0.016632541037     +1.1758     -6.004     -114.083           </span>
+<span class="even">  8      2741 /        20         1 137.050000000000  -0.014000962090     +1.1880     -5.600     -112.008           </span>
+<span class="odd">  9      2878 /        21         1 137.047619047619  -0.011620009709     +1.2049     -5.124     -107.613           </span>
+<span class="even"> 10      3015 /        22         1 137.045454545455  -0.009455507545     +1.2289     -4.576     -100.682           </span>
+<span class="odd"> 11      3152 /        23         1 137.043478260870  -0.007479222960     +1.2642     -3.957      -91.000           </span>
+<span class="even"> 12      3289 /        24         1 137.041666666667  -0.005667628757     +1.3196     -3.265      -78.349           </span>
+<span class="odd"> 13      3426 /        25         1 137.040000000000  -0.004000962090     +1.4166     -2.501      -62.515           </span>
+<span class="even"> 14      3563 /        26         1 137.038461538462  -0.002462500552     +1.6248     -1.665      -43.281           </span>
+<span class="odd lepsze"> 15      3700 /        27         1 137.037037037037  -0.001037999127     +2.3724     -0.757      -20.431     &#10004;     </span>
+<span class="even lepsze"> 16      3837 /        28         1 137.035714285714  +0.000284752196     -3.6453     +0.223       +6.251     &#10004;     </span>
+<span class="odd"> 17     11374 /        83        55 137.036144578313  -0.000145540403     -1.9565     -1.003      -83.218           </span>
+<span class="even lepsze"> 18     15211 /       111        28 137.036036036036  -0.000036998126     +3.9337     -0.456      -50.600     &#10004;     </span>
+<span class="odd"> 19     19048 /       139        28 137.035971223022  +0.000027814888     -1.3302     +0.537      +74.700           </span>
+<span class="even lepsze"> 20     34259 /       250       111 137.036000000000  -0.000000962090    -28.9109     -0.060      -15.033     &#10004;     </span>
+<p>( 4 / 20 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby alpha1 = 137.03599903791</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1      3700 /        27         0 137.037037037037  -0.001037999127     +2.3724     -0.757      -20.431     &#10004;     </span>
+<span class="even lepsze">  2      3837 /        28         0 137.035714285714  +0.000284752196     -3.6453     +0.223       +6.251     &#10004;     </span>
+<span class="odd lepsze">  3     15211 /       111         0 137.036036036036  -0.000036998126     +3.9337     -0.456      -50.600     &#10004;     </span>
+<span class="even lepsze">  4     34259 /       250         0 137.036000000000  -0.000000962090    -28.9109     -0.060      -15.033     &#10004;     </span>
+<h3>Przybliżenia liczby A random number = 5.491257898</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1        11 /         2         1   5.500000000000  -0.008742102000    -56.1945     -0.035       -0.070     &#10004;     </span>
+<span class="even">  2       159 /        29        27   5.482758620690  +0.008499277310     -1.0286     +7.148     +207.289           </span>
+<span class="odd">  3       170 /        31         2   5.483870967742  +0.007386930258     +1.1506     +7.099     +220.064           </span>
+<span class="even">  4       181 /        33         2   5.484848484848  +0.006409413152     +1.1525     +6.980     +230.335           </span>
+<span class="odd">  5       192 /        35         2   5.485714285714  +0.005543612286     +1.1562     +6.791     +237.682           </span>
+<span class="even">  6       203 /        37         2   5.486486486486  +0.004771411514     +1.1618     +6.532     +241.686           </span>
+<span class="odd">  7       214 /        39         2   5.487179487179  +0.004078410821     +1.1699     +6.203     +241.927           </span>
+<span class="even">  8       225 /        41         2   5.487804878049  +0.003453019951     +1.1811     +5.805     +237.986           </span>
+<span class="odd">  9       236 /        43         2   5.488372093023  +0.002885804977     +1.1966     +5.336     +229.442           </span>
+<span class="even"> 10       247 /        45         2   5.488888888889  +0.002369009111     +1.2181     +4.797     +215.876           </span>
+<span class="odd"> 11       258 /        47         2   5.489361702128  +0.001896195872     +1.2493     +4.189     +196.869           </span>
+<span class="even"> 12       269 /        49         2   5.489795918367  +0.001461979633     +1.2970     +3.510     +172.000           </span>
+<span class="odd"> 13       280 /        51         2   5.490196078431  +0.001061819569     +1.3769     +2.762     +140.851           </span>
+<span class="even"> 14       291 /        53         2   5.490566037736  +0.000691860264     +1.5347     +1.943     +103.002           </span>
+<span class="odd"> 15       302 /        55         2   5.490909090909  +0.000348807091     +1.9835     +1.055      +58.033           </span>
+<span class="even lepsze"> 16       313 /        57         2   5.491228070175  +0.000029827825    +11.6940     +0.097       +5.524     &#10004;     </span>
+<span class="odd"> 17      1889 /       344       287   5.491279069767  -0.000021171767     -1.4088     -2.505     -861.852           </span>
+<span class="even"> 18      2202 /       401        57   5.491271820449  -0.000013922449     +1.5207     -2.239     -897.736           </span>
+<span class="odd"> 19      2515 /       458        57   5.491266375546  -0.000008477546     +1.6423     -1.778     -814.454           </span>
+<span class="even lepsze"> 20      2828 /       515        57   5.491262135922  -0.000004237922     +2.0004     -1.124     -578.862     &#10004;     </span>
+<span class="odd lepsze"> 21      3141 /       572        57   5.491258741259  -0.000000843259     +5.0256     -0.276     -157.815     &#10004;     </span>
+<p>( 4 / 21 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby A random number = 5.491257898</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1        11 /         2         0   5.500000000000  -0.008742102000    -56.1945     -0.035       -0.070     &#10004;     </span>
+<span class="even lepsze">  2       313 /        57         0   5.491228070175  +0.000029827825    +11.6940     +0.097       +5.524     &#10004;     </span>
+<span class="odd lepsze">  3      2828 /       515         0   5.491262135922  -0.000004237922     +2.0004     -1.124     -578.862     &#10004;     </span>
+<span class="even lepsze">  4      3141 /       572         0   5.491258741259  -0.000000843259     +5.0256     -0.276     -157.815     &#10004;     </span>
+<h3>Przybliżenia liczby Another random number = 69.505860501</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1       139 /         2         1  69.500000000000  +0.005860501000    -84.3169     +0.023       +0.047     &#10004;     </span>
+<span class="even">  2      2989 /        43        41  69.511627906977  -0.005767405977     -1.0161    -10.664     -458.549           </span>
+<span class="odd">  3      3128 /        45         2  69.511111111111  -0.005250610111     +1.0984    -10.632     -478.462           </span>
+<span class="even">  4      3267 /        47         2  69.510638297872  -0.004777796872     +1.0990    -10.554     -496.045           </span>
+<span class="odd">  5      3406 /        49         2  69.510204081633  -0.004343580633     +1.1000    -10.429     -511.018           </span>
+<span class="even">  6      3545 /        51         2  69.509803921569  -0.003943420569     +1.1015    -10.257     -523.099           </span>
+<span class="odd">  7      3684 /        53         2  69.509433962264  -0.003573461264     +1.1035    -10.038     -532.006           </span>
+<span class="even">  8      3823 /        55         2  69.509090909091  -0.003230408091     +1.1062     -9.772     -537.459           </span>
+<span class="odd">  9      3962 /        57         2  69.508771929825  -0.002911428825     +1.1096     -9.459     -539.176           </span>
+<span class="even"> 10      4101 /        59         2  69.508474576271  -0.002614075271     +1.1138     -9.100     -536.876           </span>
+<span class="odd"> 11      4240 /        61         2  69.508196721311  -0.002336220311     +1.1189     -8.693     -530.278           </span>
+<span class="even"> 12      4379 /        63         2  69.507936507937  -0.002076006937     +1.1253     -8.240     -519.099           </span>
+<span class="odd"> 13      4518 /        65         2  69.507692307692  -0.001831806692     +1.1333     -7.739     -503.060           </span>
+<span class="even"> 14      4657 /        67         2  69.507462686567  -0.001602185567     +1.1433     -7.192     -481.878           </span>
+<span class="odd"> 15      4796 /        69         2  69.507246376812  -0.001385875812     +1.1561     -6.598     -455.273           </span>
+<span class="even"> 16      4935 /        71         2  69.507042253521  -0.001181752521     +1.1727     -5.957     -422.962           </span>
+<span class="odd"> 17      5074 /        73         2  69.506849315068  -0.000988814068     +1.1951     -5.269     -384.665           </span>
+<span class="even"> 18      5213 /        75         2  69.506666666667  -0.000806165667     +1.2266     -4.535     -340.101           </span>
+<span class="odd"> 19      5352 /        77         2  69.506493506494  -0.000633005494     +1.2736     -3.753     -288.988           </span>
+<span class="even"> 20      5491 /        79         2  69.506329113924  -0.000468612924     +1.3508     -2.925     -231.044           </span>
+<span class="odd"> 21      5630 /        81         2  69.506172839506  -0.000312338506     +1.5003     -2.049     -165.989           </span>
+<span class="even"> 22      5769 /        83         2  69.506024096386  -0.000163595386     +1.9092     -1.127      -93.542           </span>
+<span class="odd lepsze"> 23      5908 /        85         2  69.505882352941  -0.000021851941     +7.4865     -0.158      -13.420     &#10004;     </span>
+<span class="even"> 24     23771 /       342       257  69.505847953216  +0.000012547784     -1.7415     +1.468     +501.933           </span>
+<span class="odd lepsze"> 25     29679 /       427        85  69.505854800937  +0.000005700063     +2.2013     +1.039     +443.775     &#10004;     </span>
+<span class="even lepsze"> 26     35587 /       512        85  69.505859375000  +0.000001126000     +5.0622     +0.295     +151.129     &#10004;     </span>
+<p>( 4 / 26 ) przybliżeń co najmniej 2 razy lepszych.</p><h3>Co najmniej 2 razy lepsze, przybliżenia liczby Another random number = 69.505860501</h3><span class="nagl"> Lp   licznik /  mianow m różnica m        iloraz        różnica D       * lepiej      D * m&sup2;       D * m&sup3;   Lepsze </span>
+<span class="odd lepsze">  1       139 /         2         0  69.500000000000  +0.005860501000    -84.3169     +0.023       +0.047     &#10004;     </span>
+<span class="even lepsze">  2      5908 /        85         0  69.505882352941  -0.000021851941     +7.4865     -0.158      -13.420     &#10004;     </span>
+<span class="odd lepsze">  3     29679 /       427         0  69.505854800937  +0.000005700063     +2.2013     +1.039     +443.775     &#10004;     </span>
+<span class="even lepsze">  4     35587 /       512         0  69.505859375000  +0.000001126000     +5.0622     +0.295     +151.129     &#10004;     </span>
+</pre>
+</body>  
+</html>

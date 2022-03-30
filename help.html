@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Help for "Approximations of algebraic and transcendental numbers" script</title>
+  <style media="screen" type="text/css">
+	body { background-color:#a0c0b0;}
+	.nagl { background-color: #E0D8D0; color:#012;}
+	.odd  { background-color: #C0f0D0;}
+	.even { background-color: #C0D0f0;}
+	.lepsze { font-weight:bold; color: #063;}
+	.odd:hover, .even:hover  { background-color: #A0E0C0;}
+	a { margin: 8px; }
+	xx { text-decoration:overline; }
+	label { text-align: right; display: inline-block; width: 250px; }
+	tt { font-family: "Courier New", Courier, monospace; font-weight:bold;}
+  </style>
+</head>
+<body>
+<a href="pomoc.html">Polish Help</a>
+<h2>Approximations of algebraic and transcendental numbers</h2>
+<p>The following parameters are available :<br>
+<label><tt>number</tt></label> - approximated number<br>
+<label><tt>name</tt></label> - opcjonalna name for that number<br>
+<label><tt>limit</tt></label> - max denominator<br>
+<label><tt>lang</tt></label> - language <tt>en</tt>, or <tt>pl</tt><br>
+<label><tt>istotnie</tt></label> - we mark <span class="lepsze"> &#10004;</span> better approximations, i.e. at least <tt>istotnie</tt> times more precise<br>
+<label><tt>any</tt></label> - approximation of any number given by the user<br>
+</p>
+<p>Example script usage<br>
+<a href="approx.php?lang=en&limit=1000"><tt>approx.php?lang=en&limit=1000</tt></a> - Approximations of all numbers defined in the script<br>
+<a href="approx.php?name=pi&lang=en&limit=1000000"><tt>approx.php?name=pi&lang=en&limit=1000000</tt></a> - Approximations of &pi; for denominators up to one million <br>
+<a href="approx.php?name=pi&lang=en&istotnie=3"><tt>approx.php?lang=en&name=pi&istotnie=3</tt></a> - Approximations of &pi; marking approximations 3 times better <br>
+<a href="approx.php?any&lang=en"><tt>approx.php?any&lang=en</tt></a> - approximations of any number given by user<br>
+</p>
+<p>For the script to work it is necessary to have a PHP server, e.g. <a href="https://www.apachefriends.org/pl/index.html">XAMPP</a>.</p>
+<p>
+If we do not want to install PHP, we can only see the results (.html files): <br><br>
+<a href="results_pi.html">Approximations of &pi;</a><br>
+<a href="results_1000.html">Approximations of selected numbers with denominators to 1000</a><br>
+<a href="results_1000000.html">Approximations of selected numbers with denominators to one million</a><br>
+<a href="wyniki_rootlist.html">Approximations of √7 √ 13 √ 17 √ 19 √ 29 √ 61 i √ 71</a><br>
+<a href="wyniki_root3list.html">Approximations of ³√2, ³√3 i ³√4 </a><br>
+</p>

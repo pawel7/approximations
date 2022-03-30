@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Pomoc do skryptu "Przybliżenia liczb algebraicznych i przestępnych"</title>
+  <style media="screen" type="text/css">
+	body { background-color:#a0c0b0;}
+	.nagl { background-color: #E0D8D0; color:#012;}
+	.odd  { background-color: #C0f0D0;}
+	.even { background-color: #C0D0f0;}
+	.lepsze { font-weight:bold; color: #063;}
+	.odd:hover, .even:hover  { background-color: #A0E0C0;}
+	a { margin: 8px; }
+	xx { text-decoration:overline; }
+	label { text-align: right; display: inline-block; width: 250px; }
+	tt { font-family: "Courier New", Courier, monospace; font-weight:bold;}
+  </style>
+</head>
+<body>
+	<a href="przyblizenia.html">Długi opis</a> <a href="help.html">English Help</a>
+<h2>Przybliżenia liczb algebraicznych i przestępnych</h2>
+<p>Dostępne są następujące parametry :<br>
+<label><tt>number</tt></label> - liczba przybliżana z kropką dziesiętną<br>
+<label><tt>name</tt></label> - opcjonalna nazwa tej liczby<br>
+<label><tt>limit</tt></label> - maksymalny mianownik<br>
+<label><tt>lang</tt></label> - język <tt>pl</tt>, lub <tt>en</tt><br>
+<label><tt>istotnie</tt></label> - zaznaczamy <span class="lepsze"> &#10004;</span> przybliżenia lepsze, czyli, co najmniej <tt>istotnie</tt> razy dokładniejsze<br>
+<label><tt>any</tt></label> - przybliżanie dowolnej liczby podanej przez użytkownika<br>
+</p>
+<p>Przykład użycia skryptu<br>
+<a href="approx.php?lang=pl&limit=1000"><tt>approx.php?lang=pl&limit=1000</tt></a> - przybliżenia wszystkich liczb określonych w skrypcie<br>
+<a href="approx.php?number=3.1415926535898&name=pi&lang=pl&limit=1000000"><tt>approx.php?number=3.1415926535898&name=pi&lang=pl&limit=1000000</tt></a> - przybliżenia &pi; dla mianowników do miliona <br>
+<a href="approx.php?number=3.1415926535898&name=pi&istotnie=3"><tt>approx.php?number=3.1415926535898&name=pi&istotnie=3</tt></a> - przybliżenia &pi; z zaznaczeniem przybliżeń 3 razy lepszych <br>
+<a href="approx.php?any&lang=en"><tt>approx.php?any&lang=en</tt></a> - approximations of any number given by user<br>
+</p>
+<p>Do działania programu konieczne jest posiadanie serwera PHP, np. <a href="https://www.apachefriends.org/pl/index.html">XAMPP</a>.</p>
+<p>
+Jeśli nie chcemy instalować PHP, to możemy tylko obejrzeć wyniki działania programu: <br><br>
+<a href="wyniki_1000.html">przybliżenia wybranych liczb dla mianowników do tysiąca </a> <br>
+<a href="wyniki_1000000.html">przybliżenia wybranych liczb dla mianowników do miliona </a><br>
+<a href="wyniki_pi.html">przybliżenia liczby pi </a><br>
+<a href="wyniki_rootlist.html">przybliżenia √7 √ 13 √ 17 √ 19 √ 29 √ 61 i √ 71</a><br>
+<a href="wyniki_root3list.html">przybliżenia ³√2, ³√3 i ³√4 </a><br>
+</p>
